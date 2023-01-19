@@ -20,8 +20,8 @@ namespace SwimingSushi.Customs
 				Min = 2,
 				Items = new List<Item>()
 				{
-					(Item)GDOUtils.GetExistingGDO(-1847818036),
-					(Item)GDOUtils.GetExistingGDO(-1847818036)
+					(Item)GDOUtils.GetExistingGDO(ItemReferences.SeaweedCooked),
+					(Item)GDOUtils.GetExistingGDO(ItemReferences.SeaweedCooked)
 				}
 			},
 		};

@@ -8,7 +8,7 @@ using System.Reflection;
 
 namespace SwimingSushi.Customs.Sushi
 {
-	public class Sushi_Plated : CustomItemGroup
+	public class Sushi_Avocado_Fish_Plated : CustomItemGroup
 	{
 		public override string UniqueNameID => "Sushi_Plated";
 		public override GameObject Prefab => Main.bundle.LoadAsset<GameObject>("Sushi - Plated");
@@ -45,13 +45,17 @@ namespace SwimingSushi.Customs.Sushi
 			});
 		}
 	}
-	public class Sushi_Plated_Dish : CustomDish
+	public class Sushi_Avocado_Fish_Plated_Dish : CustomDish
 	{
 		public override int BaseGameDataObjectID => -1778969928;
-		public override GameObject DisplayPrefab => ((Item)GDOUtils.GetCustomGameDataObject<Sushi_Plated>().GameDataObject).Prefab;
+		public override GameObject DisplayPrefab => ((Item)GDOUtils.GetCustomGameDataObject<Sushi_Avocado_Fish_Plated>().GameDataObject).Prefab;
 		public override GameObject IconPrefab => Main.bundle.LoadAsset<GameObject>("Sushi - Icon");
 		public override List<string> StartingNameSet => new List<string> {
-			"Swimmers?"
+			"Sushi Train",
+			"Su Shi Is Funny",
+			"Swim Fish! Swim!",
+			"Fish Oasis",
+			"Wrap Me Sushi",
 		};
 
 		public override bool IsAvailableAsLobbyOption => true;
@@ -60,7 +64,7 @@ namespace SwimingSushi.Customs.Sushi
 		{
 			new Dish.MenuItem
 			{
-				Item = (Item)GDOUtils.GetCustomGameDataObject<Sushi_Plated>().GameDataObject,
+				Item = (Item)GDOUtils.GetCustomGameDataObject<Sushi_Avocado_Fish_Plated>().GameDataObject,
 				Phase = MenuPhase.Main,
 				Weight = 1,
 				DynamicMenuType = DynamicMenuType.Static,
@@ -72,7 +76,7 @@ namespace SwimingSushi.Customs.Sushi
 		{
 			new Dish.MenuItem()
 			{
-				Item = (Item)GDOUtils.GetCustomGameDataObject<Sushi_Plated>().GameDataObject,
+				Item = (Item)GDOUtils.GetCustomGameDataObject<Sushi_Avocado_Fish_Plated>().GameDataObject,
 				Phase = MenuPhase.Main,
 				Weight = 1,
 				DynamicMenuType = DynamicMenuType.Static,
@@ -82,8 +86,7 @@ namespace SwimingSushi.Customs.Sushi
 
 		public override HashSet<Item> MinimumIngredients => new HashSet<Item>()
 		{
-			//(Item)GDOUtils.GetExistingGDO(ItemReferences.Plate),
-			(Item)GDOUtils.GetExistingGDO(1297982178),
+			(Item)GDOUtils.GetExistingGDO(ItemReferences.Seaweed),
 			(Item)GDOUtils.GetExistingGDO(ItemReferences.Wok),
 			(Item)GDOUtils.GetExistingGDO(ItemReferences.Rice),
 			(Item)GDOUtils.GetExistingGDO(ItemReferences.FishFilletRaw),
