@@ -1,12 +1,6 @@
 ﻿using KitchenData;
 using KitchenLib.Customs;
-using KitchenLib.References;
 using KitchenLib.Utils;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UnityEngine;
 
 namespace SwimingSushi.Customs
@@ -20,9 +14,9 @@ namespace SwimingSushi.Customs
 		{
 			Item item = (Item)gameDataObject;
 			MaterialUtils.ApplyMaterial(item.Prefab, "Avocado.Slices", new Material[] {
+				MaterialUtils.GetExistingMaterial("Tree Dark"),
 				MaterialUtils.GetExistingMaterial("Lettuce"),
-				MaterialUtils.GetExistingMaterial("Lettuce"),
-				MaterialUtils.GetExistingMaterial("Lettuce")
+				MaterialUtils.GetExistingMaterial("Baked Apple")
 			});
 		}
 	}

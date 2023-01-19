@@ -1,10 +1,15 @@
 ﻿using KitchenLib;
+using KitchenLib.Event;
 using KitchenLib.Utils;
+using KitchenData;
+using KitchenLib.References;
 using KitchenMods;
 using System.Linq;
 using System.Reflection;
 using UnityEngine;
 using SwimingSushi.Customs;
+using SwimingSushi.Customs.Sushi;
+using Kitchen;
 
 namespace SwimingSushi
 {
@@ -22,16 +27,16 @@ namespace SwimingSushi
 			AddGameDataObject<AvocadoProvider>();
 			AddGameDataObject<ChoppedAvocado>();
 
-			AddGameDataObject<FishProvider>();
-
 			AddGameDataObject<NoriSheet>();
 			AddGameDataObject<PlainSushi_Unrolled>();
 			AddGameDataObject<Sushi_Avocado_Unrolled>();
-			AddGameDataObject<Sushi_Fish_Unrolled>();
-			AddGameDataObject<Sushi_Avocado_Fish_Rolled>();
 			AddGameDataObject<Sushi_Avocado_Fish_Unrolled>();
+			AddGameDataObject<Sushi_Avocado_Fish_Rolled>();
 			AddGameDataObject<Sushi_Avocado_Fish_Cut>();
 			AddGameDataObject<Sushi_Avocado_Fish_Split>();
+			AddGameDataObject<Sushi_Plated>();
+
+			AddGameDataObject<Sushi_Plated_Dish>();
 		}
 	}
 }

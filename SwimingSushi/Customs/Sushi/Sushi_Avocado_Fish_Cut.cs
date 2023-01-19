@@ -1,10 +1,8 @@
 ﻿using KitchenData;
 using KitchenLib.Customs;
-using KitchenLib.References;
 using KitchenLib.Utils;
 using UnityEngine;
 using System.Collections.Generic;
-using Kitchen;
 
 namespace SwimingSushi.Customs
 {

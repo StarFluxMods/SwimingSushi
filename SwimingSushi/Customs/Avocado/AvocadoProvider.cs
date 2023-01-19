@@ -2,12 +2,7 @@
 using KitchenLib.Customs;
 using KitchenLib.References;
 using KitchenLib.Utils;
-using System;
 using System.Collections.Generic;
-using System.Data.Odbc;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UnityEngine;
 
 namespace SwimingSushi.Customs
@@ -28,11 +23,11 @@ namespace SwimingSushi.Customs
 		{
 			Appliance appliance = (Appliance)gameDataObject;
 			MaterialUtils.ApplyMaterial(appliance.Prefab, "Avocado_Provider/Avocado/Mesh", new Material[] {
-				MaterialUtils.GetExistingMaterial("Raw Fish Spiny"),
-				MaterialUtils.GetCustomMaterial("Nori")
+				MaterialUtils.GetExistingMaterial("Tree Dark"),
+				MaterialUtils.GetExistingMaterial("Baked Apple")
 			});
 			MaterialUtils.ApplyMaterial(appliance.Prefab, "Avocado_Provider/Crate/Mesh", new Material[] {
-				MaterialUtils.GetExistingMaterial("Raw Fish Spiny")
+				MaterialUtils.GetExistingMaterial("Wood - Default")
 			});
 		}
 	}

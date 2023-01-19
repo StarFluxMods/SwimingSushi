@@ -16,7 +16,7 @@ namespace SwimingSushi.Customs
 			new Item.ItemProcess{
 				Duration = 1f,
 				IsBad = false,
-				Process = (Process)GDOUtils.GetExistingGDO(ProcessReferences.Chop),
+				Process = (Process)GDOUtils.GetExistingGDO(ProcessReferences.Knead),
 				Result = (Item)GDOUtils.GetCustomGameDataObject<Sushi_Avocado_Fish_Rolled>().GameDataObject
 			}
 		};
@@ -31,16 +31,6 @@ namespace SwimingSushi.Customs
 				{
 					(Item)GDOUtils.GetCustomGameDataObject<Sushi_Avocado_Unrolled>().GameDataObject,
 					(Item)GDOUtils.GetExistingGDO(ItemReferences.FishFillet)
-				}
-			},
-			new ItemGroup.ItemSet()
-			{
-				Max = 2,
-				Min = 2,
-				Items = new List<Item>()
-				{
-					(Item)GDOUtils.GetCustomGameDataObject<Sushi_Fish_Unrolled>().GameDataObject,
-					(Item)GDOUtils.GetCustomGameDataObject<ChoppedAvocado>().GameDataObject
 				}
 			}
 		};

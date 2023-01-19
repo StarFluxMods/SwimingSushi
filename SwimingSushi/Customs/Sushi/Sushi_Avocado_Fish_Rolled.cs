@@ -1,5 +1,4 @@
-﻿using Kitchen;
-using KitchenData;
+﻿using KitchenData;
 using KitchenLib.Customs;
 using KitchenLib.References;
 using KitchenLib.Utils;
@@ -20,7 +19,6 @@ namespace SwimingSushi.Customs
 				Process = (Process)GDOUtils.GetExistingGDO(ProcessReferences.Chop),
 				Result = (Item)GDOUtils.GetCustomGameDataObject<Sushi_Avocado_Fish_Cut>().GameDataObject
 			}
-
 		};
 
 		public override void OnRegister(GameDataObject gameDataObject)

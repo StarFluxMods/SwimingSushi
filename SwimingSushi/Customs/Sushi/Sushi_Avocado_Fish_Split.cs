@@ -1,9 +1,6 @@
-﻿using Kitchen;
-using KitchenData;
+﻿using KitchenData;
 using KitchenLib.Customs;
-using KitchenLib.References;
 using KitchenLib.Utils;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace SwimingSushi.Customs
