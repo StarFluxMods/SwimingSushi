@@ -74,8 +74,7 @@ namespace SwimingSushi.Customs.Sushi.Avocado_Fish
                 DynamicMenuIngredient = null
             }
         };
-
-        public List<Dish.MenuItem> UnlocksMenuItems => new List<Dish.MenuItem>()
+		public List<Dish.MenuItem> UnlocksMenuItems => new List<Dish.MenuItem>()
 		{
 			new Dish.MenuItem()
 			{
@@ -87,7 +86,7 @@ namespace SwimingSushi.Customs.Sushi.Avocado_Fish
 			}
 		};
 
-        public override HashSet<Item> MinimumIngredients => new HashSet<Item>()
+		public override HashSet<Item> MinimumIngredients => new HashSet<Item>()
         {
             (Item)GDOUtils.GetExistingGDO(ItemReferences.Seaweed),
             (Item)GDOUtils.GetExistingGDO(ItemReferences.Wok),
