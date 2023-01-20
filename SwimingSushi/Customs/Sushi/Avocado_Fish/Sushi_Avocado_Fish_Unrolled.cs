@@ -5,9 +5,9 @@ using KitchenLib.Utils;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace SwimingSushi.Customs
+namespace SwimingSushi.Customs.Sushi.Avocado_Fish
 {
-	public class Sushi_Avocado_Fish_Unrolled : CustomItemGroup
+    public class Sushi_Avocado_Fish_Unrolled : CustomItemGroup
 	{
 		public override string UniqueNameID => "Sushi_Avocado_Fish_Unrolled";
 		public override GameObject Prefab => Main.bundle.LoadAsset<GameObject>("Sushi_Avocado_Fish_Unrolled");

@@ -5,12 +5,12 @@ using KitchenLib.Utils;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace SwimingSushi.Customs
+namespace SwimingSushi.Customs.Sushi.Avocado_Fish
 {
-	public class Sushi_Avocado_Fish_Rolled : CustomItem
+    public class Sushi_Avocado_Fish_Rolled : CustomItem
 	{
 		public override string UniqueNameID => "Sushi_Avocado_Fish_Rolled";
-		public override GameObject Prefab => Main.bundle.LoadAsset<GameObject>("SushiRolled");
+		public override GameObject Prefab => Main.bundle.LoadAsset<GameObject>("Sushi_Avocado_Fish_Rolled");
 		public override List<Item.ItemProcess> Processes => new List<Item.ItemProcess>
 		{
 			new Item.ItemProcess{

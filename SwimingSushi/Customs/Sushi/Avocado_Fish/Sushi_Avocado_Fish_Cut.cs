@@ -4,12 +4,12 @@ using KitchenLib.Utils;
 using UnityEngine;
 using System.Collections.Generic;
 
-namespace SwimingSushi.Customs
+namespace SwimingSushi.Customs.Sushi.Avocado_Fish
 {
-	public class Sushi_Avocado_Fish_Cut : CustomItem
+    public class Sushi_Avocado_Fish_Cut : CustomItem
 	{
 		public override string UniqueNameID => "Sushi_Avocado_Fish_Cut";
-		public override GameObject Prefab => Main.bundle.LoadAsset<GameObject>("SushiCut");
+		public override GameObject Prefab => Main.bundle.LoadAsset<GameObject>("Sushi_Avocado_Fish_Cut");
 		public override int SplitCount => 3;
 		public override Item SplitSubItem => (Item)GDOUtils.GetCustomGameDataObject<Sushi_Avocado_Fish_Split>().GameDataObject;
 
