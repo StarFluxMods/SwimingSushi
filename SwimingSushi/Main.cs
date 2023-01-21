@@ -1,4 +1,5 @@
 ﻿using KitchenLib;
+using KitchenLib.Event;
 using KitchenMods;
 using System.Linq;
 using System.Reflection;
@@ -7,6 +8,9 @@ using SwimingSushi.Customs;
 using SwimingSushi.Customs.Sushi.Base;
 using SwimingSushi.Customs.Sushi.Avocado_Fish;
 using SwimingSushi.Customs.Sushi.Crab_Mayo;
+using KitchenData;
+using KitchenLib.Utils;
+using System.Collections.Generic;
 
 namespace SwimingSushi
 {
@@ -35,6 +39,7 @@ namespace SwimingSushi
 			AddGameDataObject<Sushi_Avocado_Fish_Plated>();
 			AddGameDataObject<Sushi_Avocado_Fish_Plated_Dish>();
 
+			/*
 			AddGameDataObject<Sushi_Crab_Unrolled>();
 			AddGameDataObject<Sushi_Crab_Mayo_Unrolled>();
 			AddGameDataObject<Sushi_Crab_Mayo_Rolled>();
@@ -42,6 +47,19 @@ namespace SwimingSushi
 			AddGameDataObject<Sushi_Crab_Mayo_Split>();
 			AddGameDataObject<Sushi_Crab_Mayo_Plated>();
 			AddGameDataObject<Sushi_Crab_Mayo_Plated_Dish>();
+			*/
+
+			Events.BuildGameDataEvent += (s, args) =>
+			{
+				Main.instance.Log("=========Hello World");
+				//FieldInfo prerequisiteDishesEditor = ReflectionUtils.GetField<Unlock>("HardcodedBlockers");
+				foreach (Dish dish in args.gamedata.Get<Dish>())
+				{
+					foreach (Unlock unlock in dish.BlockedBy)
+					{
+					}
+				}
+			};
 		}
 	}
 }

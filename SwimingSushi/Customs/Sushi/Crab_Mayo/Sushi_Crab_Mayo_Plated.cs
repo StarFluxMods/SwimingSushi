@@ -61,10 +61,6 @@ namespace SwimingSushi.Customs.Sushi.Crab_Mayo
 			"Fish Oasis",
 			"Wrap Me Sushi",
 		};
-		public override HashSet<Dish> PrerequisiteDishesEditor => new HashSet<Dish>
-		{
-			(Dish)GDOUtils.GetCustomGameDataObject<Sushi_Avocado_Fish_Plated_Dish>().GameDataObject
-		};
 		public override bool IsAvailableAsLobbyOption => true;
 
 		public override List<Dish.MenuItem> ResultingMenuItems => new List<Dish.MenuItem>
@@ -78,8 +74,7 @@ namespace SwimingSushi.Customs.Sushi.Crab_Mayo
 				DynamicMenuIngredient = null
 			}
 		};
-
-
+		
 		public List<Dish.MenuItem> UnlocksMenuItems => new List<Dish.MenuItem>()
 		{
 			new Dish.MenuItem()
