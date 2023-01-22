@@ -48,7 +48,7 @@ namespace SwimingSushi.Customs.Sushi.Avocado_Fish
     }
     public class Sushi_Avocado_Fish_Plated_Dish : CustomDish
     {
-        //public override string UniqueNameID => "Sushi_Avocado_Fish_Plated_Dish";
+        public override string UniqueNameID => "Sushi_Avocado_Fish_Plated_Dish";
         public override int BaseGameDataObjectID => -1778969928;
         public override GameObject DisplayPrefab => ((Item)GDOUtils.GetCustomGameDataObject<Sushi_Avocado_Fish_Plated>().GameDataObject).Prefab;
         public override GameObject IconPrefab => Main.bundle.LoadAsset<GameObject>("Sushi - Icon");
@@ -62,6 +62,8 @@ namespace SwimingSushi.Customs.Sushi.Avocado_Fish
         };
 
         public override bool IsAvailableAsLobbyOption => true;
+
+		public override DishType Type => DishType.Base;	
 
         public override List<Dish.MenuItem> ResultingMenuItems => new List<Dish.MenuItem>
         {

@@ -51,6 +51,7 @@ namespace SwimingSushi.Customs.Sushi.Crab_Mayo
 		{
 			(Unlock)GDOUtils.GetCustomGameDataObject<Sushi_Avocado_Fish_Plated_Dish>().GameDataObject
 		};
+		public override DishType Type => DishType.Side;
 		public override float SelectionBias => 100f;
 		public override DishCustomerChange CustomerMultiplier => DishCustomerChange.SmallDecrease;
 		public override int BaseGameDataObjectID => -1778969928;
@@ -61,7 +62,7 @@ namespace SwimingSushi.Customs.Sushi.Crab_Mayo
 			"Fish Oasis",
 			"Wrap Me Sushi",
 		};
-		public override bool IsAvailableAsLobbyOption => true;
+		public override bool IsAvailableAsLobbyOption => false;
 
 		public override List<Dish.MenuItem> ResultingMenuItems => new List<Dish.MenuItem>
 		{

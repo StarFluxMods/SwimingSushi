@@ -16,7 +16,7 @@ namespace SwimingSushi
 {
     public class Main : BaseMod
 	{
-		public Main() : base("swimingsushi", "Swiming Sushi", "StarFluxGames", "0.1.0", "1.1.3", Assembly.GetExecutingAssembly()) { }
+		public Main() : base("swimingsushi", "Swiming Sushi", "StarFluxGames", "0.1.1", "1.1.3", Assembly.GetExecutingAssembly()) { }
 
 		public static AssetBundle bundle;
 
@@ -39,7 +39,7 @@ namespace SwimingSushi
 			AddGameDataObject<Sushi_Avocado_Fish_Plated>();
 			AddGameDataObject<Sushi_Avocado_Fish_Plated_Dish>();
 
-			/*
+			
 			AddGameDataObject<Sushi_Crab_Unrolled>();
 			AddGameDataObject<Sushi_Crab_Mayo_Unrolled>();
 			AddGameDataObject<Sushi_Crab_Mayo_Rolled>();
@@ -47,19 +47,7 @@ namespace SwimingSushi
 			AddGameDataObject<Sushi_Crab_Mayo_Split>();
 			AddGameDataObject<Sushi_Crab_Mayo_Plated>();
 			AddGameDataObject<Sushi_Crab_Mayo_Plated_Dish>();
-			*/
-
-			Events.BuildGameDataEvent += (s, args) =>
-			{
-				Main.instance.Log("=========Hello World");
-				//FieldInfo prerequisiteDishesEditor = ReflectionUtils.GetField<Unlock>("HardcodedBlockers");
-				foreach (Dish dish in args.gamedata.Get<Dish>())
-				{
-					foreach (Unlock unlock in dish.BlockedBy)
-					{
-					}
-				}
-			};
+			
 		}
 	}
 }
