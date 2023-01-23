@@ -20,6 +20,9 @@ namespace SwimingSushi
 
 		public static AssetBundle bundle;
 
+		public static CustomDish Sushi_Avocado_Fish_Plated_Dish;
+		public static CustomDish Sushi_Crab_Mayo_Plated_Dish;
+
 		protected override void OnPostActivate(Mod mod)
 		{
 			bundle = bundle = mod.GetPacks<AssetBundleModPack>().SelectMany(e => e.AssetBundles).ToList()[0];
@@ -37,7 +40,7 @@ namespace SwimingSushi
 			AddGameDataObject<Sushi_Avocado_Fish_Cut>();
 			AddGameDataObject<Sushi_Avocado_Fish_Split>();
 			AddGameDataObject<Sushi_Avocado_Fish_Plated>();
-			AddGameDataObject<Sushi_Avocado_Fish_Plated_Dish>();
+			Sushi_Avocado_Fish_Plated_Dish = AddGameDataObject<Sushi_Avocado_Fish_Plated_Dish>();
 
 			
 			AddGameDataObject<Sushi_Crab_Unrolled>();
@@ -46,8 +49,14 @@ namespace SwimingSushi
 			AddGameDataObject<Sushi_Crab_Mayo_Cut>();
 			AddGameDataObject<Sushi_Crab_Mayo_Split>();
 			AddGameDataObject<Sushi_Crab_Mayo_Plated>();
-			AddGameDataObject<Sushi_Crab_Mayo_Plated_Dish>();
-			
+			Sushi_Crab_Mayo_Plated_Dish = AddGameDataObject<Sushi_Crab_Mayo_Plated_Dish>();
+		}
+
+		protected override void OnUpdate()
+		{
+			((Dish)Sushi_Crab_Mayo_Plated_Dish.GameDataObject).BlockedBy = new List<Unlock>();
+		}
+	}
 		}
 	}
 }

@@ -6,6 +6,10 @@ using KitchenLib.Utils;
 using KitchenLib.References;
 using System.Reflection;
 using SwimingSushi.Customs.Sushi.Avocado_Fish;
+using Unity.Mathematics;
+using System.ComponentModel;
+using Unity.XR.OpenVR;
+using Unity.Collections;
 
 namespace SwimingSushi.Customs.Sushi.Crab_Mayo
 {
@@ -46,48 +50,24 @@ namespace SwimingSushi.Customs.Sushi.Crab_Mayo
 	}
 	public class Sushi_Crab_Mayo_Plated_Dish : CustomDish
 	{
+		//CustomGameDataObject
 		public override string UniqueNameID => "Sushi_Crab_Mayo_Plated_Dish";
-		public override List<Unlock> HardcodedRequirements => new List<Unlock>
-		{
-			(Unlock)GDOUtils.GetCustomGameDataObject<Sushi_Avocado_Fish_Plated_Dish>().GameDataObject
-		};
-		public override DishType Type => DishType.Side;
-		public override float SelectionBias => 100f;
-		public override DishCustomerChange CustomerMultiplier => DishCustomerChange.SmallDecrease;
-		public override int BaseGameDataObjectID => -1778969928;
-		public override List<string> StartingNameSet => new List<string> {
-			"Sushi Train",
-			"Su Shi Is Funny",
-			"Swim Fish! Swim!",
-			"Fish Oasis",
-			"Wrap Me Sushi",
-		};
-		public override bool IsAvailableAsLobbyOption => false;
-
-		public override List<Dish.MenuItem> ResultingMenuItems => new List<Dish.MenuItem>
-		{
-			new Dish.MenuItem
-			{
-				Item = (Item)GDOUtils.GetCustomGameDataObject<Sushi_Crab_Mayo_Plated>().GameDataObject,
-				Phase = MenuPhase.Main,
-				Weight = 100,
-				DynamicMenuType = DynamicMenuType.Static,
-				DynamicMenuIngredient = null
-			}
-		};
+		public override int BaseGameDataObjectID => DishReferences.BurgerBase;
 		
-		public List<Dish.MenuItem> UnlocksMenuItems => new List<Dish.MenuItem>()
-		{
-			new Dish.MenuItem()
-			{
-				Item = (Item)GDOUtils.GetCustomGameDataObject<Sushi_Crab_Mayo_Plated>().GameDataObject,
-				Phase = MenuPhase.Main,
-				Weight = 100,
-				DynamicMenuType = DynamicMenuType.Static,
-				DynamicMenuIngredient = null
-			}
-		};
+		//CustomUnlock
+		public override Unlock.RewardLevel ExpReward => Unlock.RewardLevel.Medium;
+		public override bool IsUnlockable => true;
+		public override UnlockGroup UnlockGroup => UnlockGroup.Dish;
+		public override CardType CardType => CardType.Default;
+		public override int MinimumFranchiseTier => 0;
+		public override bool IsSpecificFranchiseTier => false;
+		public override DishCustomerChange CustomerMultiplier => DishCustomerChange.SmallDecrease;
+		public override float SelectionBias => 0;
+		public override List<Unlock> HardcodedRequirements => new List<Unlock> { (Unlock)GDOUtils.GetCustomGameDataObject<Sushi_Avocado_Fish_Plated_Dish>().GameDataObject };
+		public override List<Unlock> HardcodedBlockers => new List<Unlock> { };
 
+		//CustomDish
+		public override DishType Type => DishType.Main;
 		public override HashSet<Item> MinimumIngredients => new HashSet<Item>()
 		{
 			(Item)GDOUtils.GetExistingGDO(ItemReferences.Seaweed),
@@ -98,6 +78,7 @@ namespace SwimingSushi.Customs.Sushi.Crab_Mayo
 			(Item)GDOUtils.GetExistingGDO(ItemReferences.Oil)
 		};
 
+		
 		public override HashSet<Process> RequiredProcesses => new HashSet<Process>
 		{
 			(Process)GDOUtils.GetExistingGDO(ProcessReferences.Cook),
@@ -105,6 +86,25 @@ namespace SwimingSushi.Customs.Sushi.Crab_Mayo
 			(Process)GDOUtils.GetExistingGDO(ProcessReferences.Knead),
 		};
 
+		public override List<Dish.MenuItem> ResultingMenuItems => new List<Dish.MenuItem>
+		{
+			new Dish.MenuItem
+			{
+				Item = (Item)GDOUtils.GetCustomGameDataObject<Sushi_Crab_Mayo_Plated>().GameDataObject,
+				Phase = MenuPhase.Main,
+				Weight = 1,
+				DynamicMenuType = DynamicMenuType.Static,
+				DynamicMenuIngredient = null
+			}
+		};
+		public override HashSet<Dish.IngredientUnlock> IngredientsUnlocks => new HashSet<Dish.IngredientUnlock>
+		{
+			new Dish.IngredientUnlock
+			{
+				MenuItem = (ItemGroup)GDOUtils.GetCustomGameDataObject<Sushi_Crab_Mayo_Plated>().GameDataObject,
+				Ingredient = (Item)GDOUtils.GetExistingGDO(ItemReferences.CrabRaw)
+			}
+		};
 		public override Dictionary<Locale, string> Recipe => new Dictionary<Locale, string>
 		{
 			{ Locale.English, "Make some Nori with cooked Seaweed, add some Rice, Chopped Crab, Mayo, and roll for serving!" }
