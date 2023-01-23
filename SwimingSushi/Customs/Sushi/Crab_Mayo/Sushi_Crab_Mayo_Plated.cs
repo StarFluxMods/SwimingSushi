@@ -10,6 +10,7 @@ using Unity.Mathematics;
 using System.ComponentModel;
 using Unity.XR.OpenVR;
 using Unity.Collections;
+using Kitchen;
 
 namespace SwimingSushi.Customs.Sushi.Crab_Mayo
 {
@@ -19,7 +20,8 @@ namespace SwimingSushi.Customs.Sushi.Crab_Mayo
         public override GameObject Prefab => Main.bundle.LoadAsset<GameObject>("Sushi_Crab_Mayo_Plated");
         public override bool AutoCollapsing => true;
         public override Item DirtiesTo => (Item)GDOUtils.GetExistingGDO(ItemReferences.PlateDirty);
-        public override List<ItemGroup.ItemSet> Sets => new List<ItemGroup.ItemSet>()
+		public override bool CanContainSide => true;
+		public override List<ItemGroup.ItemSet> Sets => new List<ItemGroup.ItemSet>()
         {
             new ItemGroup.ItemSet()
             {
@@ -32,8 +34,9 @@ namespace SwimingSushi.Customs.Sushi.Crab_Mayo
                 }
             }
         };
+		public override ItemValue ItemValue => ItemValue.Large;
 
-        public override void OnRegister(GameDataObject gameDataObject)
+		public override void OnRegister(GameDataObject gameDataObject)
         {
             ItemGroup item = (ItemGroup)gameDataObject;
             MaterialUtils.ApplyMaterial(item.Prefab, "Plate/Plate/Cylinder", new Material[]
