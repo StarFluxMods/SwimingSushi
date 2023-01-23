@@ -1,5 +1,4 @@
 ﻿using KitchenLib;
-using KitchenLib.Event;
 using KitchenMods;
 using System.Linq;
 using System.Reflection;
@@ -9,8 +8,10 @@ using SwimingSushi.Customs.Sushi.Base;
 using SwimingSushi.Customs.Sushi.Avocado_Fish;
 using SwimingSushi.Customs.Sushi.Crab_Mayo;
 using KitchenData;
-using KitchenLib.Utils;
 using System.Collections.Generic;
+using Kitchen;
+using KitchenLib.References;
+using KitchenLib.Customs;
 
 namespace SwimingSushi
 {
@@ -54,7 +55,7 @@ namespace SwimingSushi
 
 		protected override void OnUpdate()
 		{
-			((Dish)Sushi_Crab_Mayo_Plated_Dish.GameDataObject).BlockedBy = new List<Unlock>();
+			((Dish)Sushi_Crab_Mayo_Plated_Dish.GameDataObject).BlockedBy = Sushi_Crab_Mayo_Plated_Dish.HardcodedBlockers;
 		}
 	}
 		}

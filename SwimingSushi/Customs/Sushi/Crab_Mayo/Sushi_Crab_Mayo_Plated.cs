@@ -107,7 +107,7 @@ namespace SwimingSushi.Customs.Sushi.Crab_Mayo
 		};
 		public override Dictionary<Locale, string> Recipe => new Dictionary<Locale, string>
 		{
-			{ Locale.English, "Make some Nori with cooked Seaweed, add some Rice, Chopped Crab, Mayo, and roll for serving!" }
+			{ Locale.English, "Combine 2 Cooked Seaweed to make Nori, add some Rice, Chopped Crab, then Mayonnaise and roll for serving!" }
 		};
 
 		public override void OnRegister(GameDataObject gameDataObject)
