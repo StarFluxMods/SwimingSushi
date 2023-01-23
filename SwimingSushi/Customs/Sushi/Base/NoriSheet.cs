@@ -31,15 +31,6 @@ namespace SwimingSushi.Customs.Sushi.Base
             Item item = (Item)gameDataObject;
             MaterialUtils.ApplyMaterial(item.Prefab, "SushiUnrolled/Nori", new Material[] { MaterialUtils.GetCustomMaterial("Nori") });
             MaterialUtils.ApplyMaterial(item.Prefab, "SushiUnrolled/Rice", new Material[] { MaterialUtils.GetExistingMaterial("Rice") });
-
-
-            ((Item)GDOUtils.GetExistingGDO(ItemReferences.Flour)).DerivedProcesses.Add(new Item.ItemProcess
-            {
-                Duration = 1,
-                IsBad = false,
-                Process = (Process)GDOUtils.GetExistingGDO(ProcessReferences.Cook),
-                Result = item
-            });
         }
     }
 }
