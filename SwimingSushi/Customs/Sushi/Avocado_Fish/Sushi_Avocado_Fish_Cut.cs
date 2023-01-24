@@ -18,6 +18,7 @@ namespace SwimingSushi.Customs.Sushi.Avocado_Fish
 			(Item)GDOUtils.GetCustomGameDataObject<Sushi_Avocado_Fish_Split>().GameDataObject
 		};
 
+		public override string ColourBlindTag => "AF";
 		public override void OnRegister(GameDataObject gameDataObject)
 		{
 			Item item = (Item)gameDataObject;

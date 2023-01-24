@@ -10,6 +10,7 @@ namespace SwimingSushi.Customs.Sushi.Avocado_Fish
         public override string UniqueNameID => "Sushi_Avocado_Fish_Split";
         public override GameObject Prefab => Main.bundle.LoadAsset<GameObject>("Sushi_Avocado_Fish_Split");
 		public override ItemStorage ItemStorageFlags => ItemStorage.StackableFood;
+		public override string ColourBlindTag => "AF";
 
 		public override void OnRegister(GameDataObject gameDataObject)
         {

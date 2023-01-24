@@ -25,8 +25,9 @@ namespace SwimingSushi.Customs.Sushi.Crab_Mayo
                 }
             }
         };
+		public override string ColourBlindTag => "C";
 
-        public override void OnRegister(GameDataObject gameDataObject)
+		public override void OnRegister(GameDataObject gameDataObject)
         {
             Item item = (Item)gameDataObject;
             MaterialUtils.ApplyMaterial(item.Prefab, "Sushi_Crab_Unrolled/Nori", new Material[] { MaterialUtils.GetCustomMaterial("Nori") });

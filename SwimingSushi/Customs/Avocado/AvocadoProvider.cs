@@ -2,7 +2,6 @@
 using KitchenLib.Customs;
 using KitchenLib.References;
 using KitchenLib.Utils;
-using SwimingSushi.Customs.Sushi.Avocado_Fish;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -18,7 +17,6 @@ namespace SwimingSushi.Customs
 		public override List<IApplianceProperty> Properties => new List<IApplianceProperty>
 		{
 			KitchenPropertiesUtils.GetUnlimitedCItemProvider(GDOUtils.GetCustomGameDataObject<Avocado>().GameDataObject.ID)
-			//KitchenPropertiesUtils.GetUnlimitedCItemProvider(GDOUtils.GetCustomGameDataObject<Sushi_Avocado_Fish_Plated>().GameDataObject.ID)
 		};
 
 		public override void OnRegister(GameDataObject gameDataObject)

@@ -5,8 +5,6 @@ using UnityEngine;
 using KitchenLib.Utils;
 using KitchenLib.References;
 using System.Reflection;
-using SwimingSushi.Customs.Sushi.Crab_Mayo;
-using Kitchen;
 
 namespace SwimingSushi.Customs.Sushi.Avocado_Fish
 {
@@ -34,6 +32,7 @@ namespace SwimingSushi.Customs.Sushi.Avocado_Fish
             }
         };
 		public override ItemValue ItemValue => ItemValue.Large;
+		public override string ColourBlindTag => "AF";
 
 		public override void OnRegister(GameDataObject gameDataObject)
         {
@@ -50,22 +49,6 @@ namespace SwimingSushi.Customs.Sushi.Avocado_Fish
                 MaterialUtils.GetExistingMaterial("Rice"),
                 MaterialUtils.GetExistingMaterial("Lettuce")
             });
-			FieldInfo SubviewPrefab = ReflectionUtils.GetField<ItemGroupView>("SubviewPrefab");
-			FieldInfo SubviewContainer = ReflectionUtils.GetField<ItemGroupView>("SubviewContainer");
-
-			ItemGroupView view = item.Prefab.AddComponent<ItemGroupView>();
-			GameObject obj = item.Prefab.transform.Find("Side Container").gameObject;
-			GameObject obj2 = item.Prefab.transform.Find("Side Prefab").gameObject;
-			if (obj != null)
-			{
-				Main.instance.Log("-------------Added");
-				SubviewContainer.SetValue(view, obj);
-			}
-			if (obj2 != null)
-			{
-				Main.instance.Log("-------------Added");
-				SubviewPrefab.SetValue(view, obj2);
-			}
 		}
     }
     public class Sushi_Avocado_Fish_Plated_Dish : CustomDish

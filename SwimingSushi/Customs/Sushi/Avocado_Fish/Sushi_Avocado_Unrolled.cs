@@ -24,8 +24,9 @@ namespace SwimingSushi.Customs.Sushi.Avocado_Fish
                 }
             }
         };
+		public override string ColourBlindTag => "A";
 
-        public override void OnRegister(GameDataObject gameDataObject)
+		public override void OnRegister(GameDataObject gameDataObject)
         {
             Item item = (Item)gameDataObject;
             MaterialUtils.ApplyMaterial(item.Prefab, "SushiUnrolled/Nori", new Material[] { MaterialUtils.GetCustomMaterial("Nori") });

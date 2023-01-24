@@ -17,8 +17,9 @@ namespace SwimingSushi.Customs.Sushi.Crab_Mayo
         {
             (Item)GDOUtils.GetCustomGameDataObject<Sushi_Crab_Mayo_Split>().GameDataObject
         };
+		public override string ColourBlindTag => "CM";
 
-        public override void OnRegister(GameDataObject gameDataObject)
+		public override void OnRegister(GameDataObject gameDataObject)
         {
             Item item = (Item)gameDataObject;
 			MaterialUtils.ApplyMaterial(item.Prefab, "Sushi_Crab_Mayo_Cut/Sushi_Cut", new Material[] {

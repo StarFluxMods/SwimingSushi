@@ -21,6 +21,7 @@ namespace SwimingSushi.Customs.Sushi.Avocado_Fish
 			}
 		};
 
+		public override string ColourBlindTag => "AF";
 		public override void OnRegister(GameDataObject gameDataObject)
 		{
 			Item item = (Item)gameDataObject;

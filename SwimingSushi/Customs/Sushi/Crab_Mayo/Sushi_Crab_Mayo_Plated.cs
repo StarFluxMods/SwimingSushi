@@ -6,11 +6,6 @@ using KitchenLib.Utils;
 using KitchenLib.References;
 using System.Reflection;
 using SwimingSushi.Customs.Sushi.Avocado_Fish;
-using Unity.Mathematics;
-using System.ComponentModel;
-using Unity.XR.OpenVR;
-using Unity.Collections;
-using Kitchen;
 
 namespace SwimingSushi.Customs.Sushi.Crab_Mayo
 {
@@ -18,7 +13,7 @@ namespace SwimingSushi.Customs.Sushi.Crab_Mayo
     {
         public override string UniqueNameID => "Sushi_Crab_Mayo_Plated";
         public override GameObject Prefab => Main.bundle.LoadAsset<GameObject>("Sushi_Crab_Mayo_Plated");
-        public override bool AutoCollapsing => true;
+        public override bool AutoCollapsing => false;
         public override Item DirtiesTo => (Item)GDOUtils.GetExistingGDO(ItemReferences.PlateDirty);
 		public override bool CanContainSide => true;
 		public override List<ItemGroup.ItemSet> Sets => new List<ItemGroup.ItemSet>()
@@ -50,6 +45,7 @@ namespace SwimingSushi.Customs.Sushi.Crab_Mayo
 				MaterialUtils.GetExistingMaterial("Rice")
 			});
 		}
+		public override string ColourBlindTag => "CM";
 	}
 	public class Sushi_Crab_Mayo_Plated_Dish : CustomDish
 	{

@@ -34,6 +34,7 @@ namespace SwimingSushi.Customs.Sushi.Crab_Mayo
 				}
 			}
 		};
+		public override string ColourBlindTag => "CM";
 
 		public override void OnRegister(GameDataObject gameDataObject)
 		{
