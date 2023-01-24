@@ -63,6 +63,28 @@ namespace SwimingSushi
 
 	public class sys : GenericSystemBase, IModSystem
 	{
+		protected override void Initialise()
+		{
+			ItemGroup group = GameData.Main.Get<ItemGroup>(ItemGroupReferences.BurgerPlated);
+			ItemGroupView view = group.Prefab.GetComponent<ItemGroupView>();
+			if (view != null)
+			{
+				FieldInfo SubviewPrefab = ReflectionUtils.GetField<ItemGroupView>("SubviewPrefab");
+				FieldInfo SubviewContainer = ReflectionUtils.GetField<ItemGroupView>("SubviewContainer");
+
+				GameObject subviewPrefab = (GameObject)SubviewPrefab.GetValue(view);
+				GameObject subviewContainer = (GameObject)SubviewContainer.GetValue(view);
+
+				Main.instance.Log("+++++++++++++++++++++++++++++++++++++++++++++");
+				Main.instance.Log(subviewPrefab.name);
+				Main.instance.Log(subviewContainer.name);
+
+				foreach (Transform t in subviewPrefab.transform)
+				{
+					Main.instance.Log(t.gameObject.name);
+				}
+			}
+		}
 		private FixedSeedContext Seed(int category_seed, int instance, string seed)
 		{
 			bool flag = !Preferences.Get<bool>(Pref.SeedsAffectEverything);
@@ -127,7 +149,7 @@ namespace SwimingSushi
 		{
 			if (group.ID == GDOUtils.GetCustomGameDataObject<Sushi_Avocado_Fish_Plated>().ID)
 			{
-				Main.instance.Log(IsGroupSatisfied(group, items).ToString());
+				//Main.instance.Log(IsGroupSatisfied(group, items).ToString());
 			}
 		}
 		private static List<bool> TempUsed = new List<bool>();
@@ -173,7 +195,7 @@ namespace SwimingSushi
 				Satisfaction satisfaction2 = IsSetSatisfied(item_set, items, ref TempUsed);
 				if (satisfaction2 == Satisfaction.Impossible)
 				{
-					Main.instance.Log("11111111111111111111111111111111111111111111111");
+					//Main.instance.Log("11111111111111111111111111111111111111111111111");
 					satisfaction = Satisfaction.Impossible;
 				}
 				if (satisfaction2 == Satisfaction.Partial)
@@ -189,8 +211,8 @@ namespace SwimingSushi
 				if (!TempUsed[i])
 				{
 					Item item = GameData.Main.Get<Item>(items[i]);
-					Main.instance.Log(item.name + " : " + item.IsMergeableSide);
-					Main.instance.Log(group + " : " + group.CanHaveSide);
+					//Main.instance.Log(item.name + " : " + item.IsMergeableSide);
+					//Main.instance.Log(group + " : " + group.CanHaveSide);
 					if (GameData.Main.TryGet<Item>(items[i], out item, true) && item.IsMergeableSide && group.CanHaveSide)
 					{
 						//Main.instance.Log(item.name);
@@ -204,7 +226,7 @@ namespace SwimingSushi
 			{
 				if (!flag7)
 				{
-					Main.instance.Log("222222222222222222222222222222222222222");
+					//Main.instance.Log("222222222222222222222222222222222222222");
 					return Satisfaction.Impossible;
 				}
 			}
