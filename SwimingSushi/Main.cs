@@ -9,6 +9,8 @@ using SwimingSushi.Customs.Sushi.Avocado_Fish;
 using SwimingSushi.Customs.Sushi.Crab_Mayo;
 using KitchenData;
 using KitchenLib.Customs;
+using KitchenLib.References;
+using KitchenLib.Utils;
 
 namespace SwimingSushi
 {
@@ -48,11 +50,20 @@ namespace SwimingSushi
 			AddGameDataObject<Sushi_Crab_Mayo_Split>();
 			AddGameDataObject<Sushi_Crab_Mayo_Plated>();
 			Sushi_Crab_Mayo_Plated_Dish = AddGameDataObject<Sushi_Crab_Mayo_Plated_Dish>();
+
+			AddGameDataObject<SalmonProvider>();
+			AddGameDataObject<CrabProvider>();
 		}
 
 		protected override void OnUpdate()
 		{
 			((Dish)Sushi_Crab_Mayo_Plated_Dish.GameDataObject).BlockedBy = Sushi_Crab_Mayo_Plated_Dish.HardcodedBlockers;
+
+			Item crabRaw = (Item)GDOUtils.GetExistingGDO(ItemReferences.CrabRaw);
+			crabRaw.DedicatedProvider = (Appliance)GDOUtils.GetCustomGameDataObject<CrabProvider>().GameDataObject;
+
+			Item salmonRaw = (Item)GDOUtils.GetExistingGDO(ItemReferences.FishFilletRaw);
+			salmonRaw.DedicatedProvider = (Appliance)GDOUtils.GetCustomGameDataObject<SalmonProvider>().GameDataObject;
 		}
 	}
 }
