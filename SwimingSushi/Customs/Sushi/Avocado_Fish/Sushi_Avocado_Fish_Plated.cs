@@ -27,7 +27,7 @@ namespace SwimingSushi.Customs.Sushi.Avocado_Fish
                     (Item)GDOUtils.GetExistingGDO(ItemReferences.Plate)
                 },
 				OrderingOnly = false,
-				IsMandatory = false,
+				IsMandatory = true,
 				RequiresUnlock = false
             }
         };

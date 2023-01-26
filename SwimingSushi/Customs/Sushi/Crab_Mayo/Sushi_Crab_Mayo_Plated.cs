@@ -26,8 +26,11 @@ namespace SwimingSushi.Customs.Sushi.Crab_Mayo
                 {
                     (Item)GDOUtils.GetCustomGameDataObject<Sushi_Crab_Mayo_Split>().GameDataObject,
                     (Item)GDOUtils.GetExistingGDO(ItemReferences.Plate)
-                }
-            }
+                },
+				OrderingOnly = false,
+				IsMandatory = true,
+				RequiresUnlock = false
+			}
         };
 		public override ItemValue ItemValue => ItemValue.Large;
 
