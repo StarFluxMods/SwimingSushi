@@ -40,7 +40,7 @@ namespace SwimingSushi.Customs.Sushi.Avocado_Fish
 		{
 			ItemGroup item = (ItemGroup)gameDataObject;
 			MaterialUtils.ApplyMaterial(item.Prefab, "SushiUnrolled/Nori", new Material[] { MaterialUtils.GetCustomMaterial("Nori") });
-			MaterialUtils.ApplyMaterial(item.Prefab, "SushiUnrolled/Rice", new Material[] { MaterialUtils.GetExistingMaterial("Rice") });
+			MaterialUtils.ApplyMaterial(item.Prefab, "SushiUnrolled/Rice", new Material[] { MaterialUtils.GetCustomMaterial("NoriRice") });
 			MaterialUtils.ApplyMaterial(item.Prefab, "SushiUnrolled/Avocado", new Material[] { MaterialUtils.GetExistingMaterial("Lettuce") });
 			MaterialUtils.ApplyMaterial(item.Prefab, "SushiUnrolled/Fillet", new Material[] { MaterialUtils.GetExistingMaterial("Raw Fish Spiny") });
 		}

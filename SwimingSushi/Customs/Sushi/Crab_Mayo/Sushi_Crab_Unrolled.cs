@@ -31,8 +31,8 @@ namespace SwimingSushi.Customs.Sushi.Crab_Mayo
         {
             Item item = (Item)gameDataObject;
             MaterialUtils.ApplyMaterial(item.Prefab, "Sushi_Crab_Unrolled/Nori", new Material[] { MaterialUtils.GetCustomMaterial("Nori") });
-            MaterialUtils.ApplyMaterial(item.Prefab, "Sushi_Crab_Unrolled/Rice", new Material[] { MaterialUtils.GetExistingMaterial("Rice") });
-            MaterialUtils.ApplyMaterial(item.Prefab, "Sushi_Crab_Unrolled/Crab", new Material[] { MaterialUtils.GetExistingMaterial("Crab - Raw Shell") });
+			MaterialUtils.ApplyMaterial(item.Prefab, "SushiUnrolled/Rice", new Material[] { MaterialUtils.GetCustomMaterial("NoriRice") });
+			MaterialUtils.ApplyMaterial(item.Prefab, "Sushi_Crab_Unrolled/Crab", new Material[] { MaterialUtils.GetExistingMaterial("Crab - Raw Shell") });
         }
     }
 }

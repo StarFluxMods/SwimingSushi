@@ -28,7 +28,7 @@ namespace SwimingSushi.Customs.Sushi.Base
         {
             Item item = (Item)gameDataObject;
             MaterialUtils.ApplyMaterial(item.Prefab, "SushiUnrolled/Nori", new Material[] { MaterialUtils.GetCustomMaterial("Nori") });
-            MaterialUtils.ApplyMaterial(item.Prefab, "SushiUnrolled/Rice", new Material[] { MaterialUtils.GetExistingMaterial("Rice") });
+            MaterialUtils.ApplyMaterial(item.Prefab, "SushiUnrolled/Rice", new Material[] { MaterialUtils.GetCustomMaterial("NoriRice") });
         }
     }
 }
