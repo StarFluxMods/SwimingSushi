@@ -8,50 +8,50 @@ using System.Reflection;
 
 namespace SwimingSushi.Customs.Sushi.Avocado_Fish
 {
-    public class Sushi_Avocado_Fish_Plated : CustomItemGroup
-    {
-        public override string UniqueNameID => "Sushi_Avocado_Fish_Plated";
-        public override GameObject Prefab => Main.bundle.LoadAsset<GameObject>("Sushi Avocado Fish Plated");
-        public override bool AutoCollapsing => false;
-        public override Item DirtiesTo => (Item)GDOUtils.GetExistingGDO(ItemReferences.PlateDirty);
+	public class Sushi_Avocado_Fish_Plated : CustomItemGroup
+	{
+		public override string UniqueNameID => "Sushi_Avocado_Fish_Plated";
+		public override GameObject Prefab => Main.bundle.LoadAsset<GameObject>("Sushi Avocado Fish Plated");
+		public override bool AutoCollapsing => false;
+		public override Item DirtiesTo => (Item)GDOUtils.GetExistingGDO(ItemReferences.PlateDirty);
 		public override bool CanContainSide => true;
 		public override List<ItemGroup.ItemSet> Sets => new List<ItemGroup.ItemSet>()
-        {
-            new ItemGroup.ItemSet()
-            {
-                Max = 2,
-                Min = 2,
-                Items = new List<Item>()
-                {
-                    (Item)GDOUtils.GetCustomGameDataObject<Sushi_Avocado_Fish_Split>().GameDataObject,
-                    (Item)GDOUtils.GetExistingGDO(ItemReferences.Plate)
-                },
+		{
+			new ItemGroup.ItemSet()
+			{
+				Max = 2,
+				Min = 2,
+				Items = new List<Item>()
+				{
+					(Item)GDOUtils.GetCustomGameDataObject<Sushi_Avocado_Fish_Split>().GameDataObject,
+					(Item)GDOUtils.GetExistingGDO(ItemReferences.Plate)
+				},
 				OrderingOnly = false,
 				IsMandatory = true,
 				RequiresUnlock = false
-            }
-        };
+			}
+		};
 		public override ItemValue ItemValue => ItemValue.Large;
 		public override string ColourBlindTag => "AF";
 
 		public override void OnRegister(GameDataObject gameDataObject)
-        {
-            ItemGroup item = (ItemGroup)gameDataObject;
-            MaterialUtils.ApplyMaterial(item.Prefab, "Plate", new Material[]
-            {
-                MaterialUtils.GetExistingMaterial("Plate"),
-                MaterialUtils.GetExistingMaterial("Plate - Ring")
-            });
-            MaterialUtils.ApplyMaterial(item.Prefab, "Sushi", new Material[]
-            {
-                MaterialUtils.GetExistingMaterial("Raw Fish Spiny"),
-                MaterialUtils.GetCustomMaterial("Nori"),
-                MaterialUtils.GetExistingMaterial("Rice"),
-                MaterialUtils.GetExistingMaterial("Lettuce")
-            });
+		{
+			ItemGroup item = (ItemGroup)gameDataObject;
+			MaterialUtils.ApplyMaterial(item.Prefab, "Plate", new Material[]
+			{
+				MaterialUtils.GetExistingMaterial("Plate"),
+				MaterialUtils.GetExistingMaterial("Plate - Ring")
+			});
+			MaterialUtils.ApplyMaterial(item.Prefab, "Sushi", new Material[]
+			{
+				MaterialUtils.GetExistingMaterial("Raw Fish Spiny"),
+				MaterialUtils.GetCustomMaterial("Nori"),
+				MaterialUtils.GetExistingMaterial("Rice"),
+				MaterialUtils.GetExistingMaterial("Lettuce")
+			});
 		}
-    }
-    public class Sushi_Avocado_Fish_Plated_Dish : CustomDish
+	}
+	public class Sushi_Avocado_Fish_Plated_Dish : CustomDish
 	{
 		//CustomGameDataObject
 		public override string UniqueNameID => "Sushi_Avocado_Fish_Plated_Dish";
@@ -71,6 +71,14 @@ namespace SwimingSushi.Customs.Sushi.Avocado_Fish
 
 		//CustomDish
 		public override string AchievementName => "";
+		public override HashSet<Dish.IngredientUnlock> ExtraOrderUnlocks => new HashSet<Dish.IngredientUnlock>
+		{
+			new Dish.IngredientUnlock
+			{
+				MenuItem = (ItemGroup)GDOUtils.GetCustomGameDataObject<Sushi_Avocado_Fish_Plated>().GameDataObject,
+				Ingredient = (Item)GDOUtils.GetExistingGDO(ItemReferences.CondimentSoySauce),
+			}
+		};
 		public override DishType Type => DishType.Base;
 		public override List<string> StartingNameSet => new List<string> {
 			"Sushi Train",
