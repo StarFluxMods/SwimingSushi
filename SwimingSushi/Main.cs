@@ -16,7 +16,7 @@ namespace SwimingSushi
 {
     public class Main : BaseMod
 	{
-		public Main() : base("swimingsushi", "Swiming Sushi", "StarFluxGames", "0.1.3", "1.1.3", Assembly.GetExecutingAssembly()) { }
+		public Main() : base("swimingsushi", "Swiming Sushi", "StarFluxGames", "0.1.4", "1.1.3", Assembly.GetExecutingAssembly()) { }
 
 		public static AssetBundle bundle;
 
