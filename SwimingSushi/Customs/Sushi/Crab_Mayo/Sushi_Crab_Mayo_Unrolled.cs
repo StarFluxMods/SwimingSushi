@@ -31,7 +31,8 @@ namespace SwimingSushi.Customs.Sushi.Crab_Mayo
 				{
 					(Item)GDOUtils.GetCustomGameDataObject<Sushi_Crab_Unrolled>().GameDataObject,
 					(Item)GDOUtils.GetExistingGDO(ItemReferences.Mayonnaise)
-				}
+				},
+				IsMandatory = true
 			},
 			new ItemGroup.ItemSet()
 			{
@@ -41,7 +42,8 @@ namespace SwimingSushi.Customs.Sushi.Crab_Mayo
 				{
 					(Item)GDOUtils.GetCustomGameDataObject<Sushi_Mayo_Unrolled>().GameDataObject,
 					(Item)GDOUtils.GetExistingGDO(ItemReferences.CrabChopped)
-				}
+				},
+				IsMandatory = true
 			}
 		};
 		public override string ColourBlindTag => "CM";

@@ -69,6 +69,7 @@ namespace SwimingSushi.Customs.Sushi.Crab_Mayo
 		public override List<Unlock> HardcodedBlockers => new List<Unlock> { };
 
 		//CustomDish
+		public override string AchievementName => "";
 		public override DishType Type => DishType.Main;
 		public override HashSet<Item> MinimumIngredients => new HashSet<Item>()
 		{

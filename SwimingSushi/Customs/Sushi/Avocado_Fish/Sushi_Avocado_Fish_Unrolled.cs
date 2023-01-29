@@ -31,7 +31,8 @@ namespace SwimingSushi.Customs.Sushi.Avocado_Fish
 				{
 					(Item)GDOUtils.GetCustomGameDataObject<Sushi_Avocado_Unrolled>().GameDataObject,
 					(Item)GDOUtils.GetExistingGDO(ItemReferences.FishFillet)
-				}
+				},
+				IsMandatory = true
 			},
 			new ItemGroup.ItemSet()
 			{
@@ -41,7 +42,8 @@ namespace SwimingSushi.Customs.Sushi.Avocado_Fish
 				{
 					(Item)GDOUtils.GetCustomGameDataObject<Sushi_Fish_Unrolled>().GameDataObject,
 					(Item)GDOUtils.GetCustomGameDataObject<ChoppedAvocado>().GameDataObject
-				}
+				},
+				IsMandatory = true
 			}
 		};
 		public override string ColourBlindTag => "AF";

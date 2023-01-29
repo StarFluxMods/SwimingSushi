@@ -70,6 +70,7 @@ namespace SwimingSushi.Customs.Sushi.Avocado_Fish
 		public override List<Unlock> HardcodedBlockers => new List<Unlock> { };
 
 		//CustomDish
+		public override string AchievementName => "";
 		public override DishType Type => DishType.Base;
 		public override List<string> StartingNameSet => new List<string> {
 			"Sushi Train",
