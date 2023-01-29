@@ -16,7 +16,7 @@ namespace SwimingSushi
 {
     public class Main : BaseMod
 	{
-		public Main() : base("swimingsushi", "Swiming Sushi", "StarFluxGames", "0.1.2", "1.1.3", Assembly.GetExecutingAssembly()) { }
+		public Main() : base("swimingsushi", "Swiming Sushi", "StarFluxGames", "0.1.3", "1.1.3", Assembly.GetExecutingAssembly()) { }
 
 		public static AssetBundle bundle;
 
@@ -35,6 +35,7 @@ namespace SwimingSushi
 			AddGameDataObject<PlainSushi_Unrolled>();
 
 			AddGameDataObject<Sushi_Avocado_Unrolled>();
+			AddGameDataObject<Sushi_Fish_Unrolled>();
 			AddGameDataObject<Sushi_Avocado_Fish_Unrolled>();
 			AddGameDataObject<Sushi_Avocado_Fish_Rolled>();
 			AddGameDataObject<Sushi_Avocado_Fish_Cut>();
@@ -44,6 +45,7 @@ namespace SwimingSushi
 
 			
 			AddGameDataObject<Sushi_Crab_Unrolled>();
+			AddGameDataObject<Sushi_Mayo_Unrolled>();
 			AddGameDataObject<Sushi_Crab_Mayo_Unrolled>();
 			AddGameDataObject<Sushi_Crab_Mayo_Rolled>();
 			AddGameDataObject<Sushi_Crab_Mayo_Cut>();

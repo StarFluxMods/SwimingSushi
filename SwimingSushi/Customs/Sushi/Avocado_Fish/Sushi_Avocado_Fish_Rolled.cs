@@ -10,7 +10,7 @@ namespace SwimingSushi.Customs.Sushi.Avocado_Fish
     public class Sushi_Avocado_Fish_Rolled : CustomItem
 	{
 		public override string UniqueNameID => "Sushi_Avocado_Fish_Rolled";
-		public override GameObject Prefab => Main.bundle.LoadAsset<GameObject>("Sushi_Avocado_Fish_Rolled");
+		public override GameObject Prefab => Main.bundle.LoadAsset<GameObject>("Sushi Avocado Fish Rolled");
 		public override List<Item.ItemProcess> Processes => new List<Item.ItemProcess>
 		{
 			new Item.ItemProcess{
@@ -25,7 +25,7 @@ namespace SwimingSushi.Customs.Sushi.Avocado_Fish
 		public override void OnRegister(GameDataObject gameDataObject)
 		{
 			Item item = (Item)gameDataObject;
-			MaterialUtils.ApplyMaterial(item.Prefab, "SushiRolled/Sushi_Rolled", new Material[] {
+			MaterialUtils.ApplyMaterial(item.Prefab, "Model/Sushi_Rolled", new Material[] {
 				MaterialUtils.GetExistingMaterial("Raw Fish Spiny"),
 				MaterialUtils.GetCustomMaterial("Nori"),
 				MaterialUtils.GetExistingMaterial("Rice"),

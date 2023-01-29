@@ -10,7 +10,7 @@ namespace SwimingSushi.Customs.Sushi.Crab_Mayo
 	public class Sushi_Crab_Mayo_Unrolled : CustomItemGroup
 	{
 		public override string UniqueNameID => "Sushi_Crab_Mayo_Unrolled";
-		public override GameObject Prefab => Main.bundle.LoadAsset<GameObject>("Sushi_Crab_Mayo_Unrolled");
+		public override GameObject Prefab => Main.bundle.LoadAsset<GameObject>("Sushi Crab Mayo Unrolled");
 		public override List<Item.ItemProcess> Processes => new List<Item.ItemProcess>
 		{
 			new Item.ItemProcess{
@@ -32,6 +32,16 @@ namespace SwimingSushi.Customs.Sushi.Crab_Mayo
 					(Item)GDOUtils.GetCustomGameDataObject<Sushi_Crab_Unrolled>().GameDataObject,
 					(Item)GDOUtils.GetExistingGDO(ItemReferences.Mayonnaise)
 				}
+			},
+			new ItemGroup.ItemSet()
+			{
+				Max = 2,
+				Min = 2,
+				Items = new List<Item>()
+				{
+					(Item)GDOUtils.GetCustomGameDataObject<Sushi_Mayo_Unrolled>().GameDataObject,
+					(Item)GDOUtils.GetExistingGDO(ItemReferences.CrabChopped)
+				}
 			}
 		};
 		public override string ColourBlindTag => "CM";
@@ -39,10 +49,10 @@ namespace SwimingSushi.Customs.Sushi.Crab_Mayo
 		public override void OnRegister(GameDataObject gameDataObject)
 		{
 			ItemGroup item = (ItemGroup)gameDataObject;
-			MaterialUtils.ApplyMaterial(item.Prefab, "Sushi_Crab_Mayo_Unrolled/Nori", new Material[] { MaterialUtils.GetCustomMaterial("Nori") });
-			MaterialUtils.ApplyMaterial(item.Prefab, "SushiUnrolled/Rice", new Material[] { MaterialUtils.GetCustomMaterial("NoriRice") });
-			MaterialUtils.ApplyMaterial(item.Prefab, "Sushi_Crab_Mayo_Unrolled/Crab", new Material[] { MaterialUtils.GetExistingMaterial("Crab - Raw Shell") });
-			MaterialUtils.ApplyMaterial(item.Prefab, "Sushi_Crab_Mayo_Unrolled/Mayo", new Material[] { MaterialUtils.GetExistingMaterial("Mayonnaise") });
+			MaterialUtils.ApplyMaterial(item.Prefab, "Model/Nori", new Material[] { MaterialUtils.GetCustomMaterial("Nori") });
+			MaterialUtils.ApplyMaterial(item.Prefab, "Model/Rice", new Material[] { MaterialUtils.GetCustomMaterial("NoriRice") });
+			MaterialUtils.ApplyMaterial(item.Prefab, "Model/Crab", new Material[] { MaterialUtils.GetExistingMaterial("Crab - Raw Shell") });
+			MaterialUtils.ApplyMaterial(item.Prefab, "Model/Mayo", new Material[] { MaterialUtils.GetExistingMaterial("Mayonnaise") });
 		}
 	}
 }

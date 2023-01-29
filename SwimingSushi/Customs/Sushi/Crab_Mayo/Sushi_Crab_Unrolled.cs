@@ -11,7 +11,7 @@ namespace SwimingSushi.Customs.Sushi.Crab_Mayo
     public class Sushi_Crab_Unrolled : CustomItemGroup
     {
         public override string UniqueNameID => "Sushi_Crab_Unrolled";
-        public override GameObject Prefab => Main.bundle.LoadAsset<GameObject>("Sushi_Crab_Unrolled");
+        public override GameObject Prefab => Main.bundle.LoadAsset<GameObject>("Sushi Crab Unrolled");
         public override List<ItemGroup.ItemSet> Sets => new List<ItemGroup.ItemSet>()
         {
             new ItemGroup.ItemSet()
@@ -30,9 +30,9 @@ namespace SwimingSushi.Customs.Sushi.Crab_Mayo
 		public override void OnRegister(GameDataObject gameDataObject)
         {
             Item item = (Item)gameDataObject;
-            MaterialUtils.ApplyMaterial(item.Prefab, "Sushi_Crab_Unrolled/Nori", new Material[] { MaterialUtils.GetCustomMaterial("Nori") });
-			MaterialUtils.ApplyMaterial(item.Prefab, "SushiUnrolled/Rice", new Material[] { MaterialUtils.GetCustomMaterial("NoriRice") });
-			MaterialUtils.ApplyMaterial(item.Prefab, "Sushi_Crab_Unrolled/Crab", new Material[] { MaterialUtils.GetExistingMaterial("Crab - Raw Shell") });
+            MaterialUtils.ApplyMaterial(item.Prefab, "Model/Nori", new Material[] { MaterialUtils.GetCustomMaterial("Nori") });
+			MaterialUtils.ApplyMaterial(item.Prefab, "Model/Rice", new Material[] { MaterialUtils.GetCustomMaterial("NoriRice") });
+			MaterialUtils.ApplyMaterial(item.Prefab, "Model/Crab", new Material[] { MaterialUtils.GetExistingMaterial("Crab - Raw Shell") });
         }
     }
 }

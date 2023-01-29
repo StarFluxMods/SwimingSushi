@@ -11,7 +11,7 @@ namespace SwimingSushi.Customs.Sushi.Avocado_Fish
     public class Sushi_Avocado_Fish_Plated : CustomItemGroup
     {
         public override string UniqueNameID => "Sushi_Avocado_Fish_Plated";
-        public override GameObject Prefab => Main.bundle.LoadAsset<GameObject>("Sushi_Avocado_Fish_Plated");
+        public override GameObject Prefab => Main.bundle.LoadAsset<GameObject>("Sushi Avocado Fish Plated");
         public override bool AutoCollapsing => false;
         public override Item DirtiesTo => (Item)GDOUtils.GetExistingGDO(ItemReferences.PlateDirty);
 		public override bool CanContainSide => true;
@@ -37,12 +37,12 @@ namespace SwimingSushi.Customs.Sushi.Avocado_Fish
 		public override void OnRegister(GameDataObject gameDataObject)
         {
             ItemGroup item = (ItemGroup)gameDataObject;
-            MaterialUtils.ApplyMaterial(item.Prefab, "Plate/Plate/Cylinder", new Material[]
+            MaterialUtils.ApplyMaterial(item.Prefab, "Plate", new Material[]
             {
                 MaterialUtils.GetExistingMaterial("Plate"),
                 MaterialUtils.GetExistingMaterial("Plate - Ring")
             });
-            MaterialUtils.ApplyMaterial(item.Prefab, "Sushi/SushiSplit/SushiSplit/Sushi_Split", new Material[]
+            MaterialUtils.ApplyMaterial(item.Prefab, "Sushi", new Material[]
             {
                 MaterialUtils.GetExistingMaterial("Raw Fish Spiny"),
                 MaterialUtils.GetCustomMaterial("Nori"),
