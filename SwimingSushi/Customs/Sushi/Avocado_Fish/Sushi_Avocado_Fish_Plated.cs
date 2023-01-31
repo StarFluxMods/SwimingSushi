@@ -14,6 +14,7 @@ namespace SwimingSushi.Customs.Sushi.Avocado_Fish
 		public override GameObject Prefab => Main.bundle.LoadAsset<GameObject>("Sushi Avocado Fish Plated");
 		public override bool AutoCollapsing => false;
 		public override Item DirtiesTo => (Item)GDOUtils.GetExistingGDO(ItemReferences.PlateDirty);
+		public override Item DisposesTo => (Item)GDOUtils.GetExistingGDO(ItemReferences.Plate);
 		public override bool CanContainSide => true;
 		public override List<ItemGroup.ItemSet> Sets => new List<ItemGroup.ItemSet>()
 		{
