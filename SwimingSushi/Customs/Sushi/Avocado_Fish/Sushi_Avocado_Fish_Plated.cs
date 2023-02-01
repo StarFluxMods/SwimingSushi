@@ -72,14 +72,6 @@ namespace SwimingSushi.Customs.Sushi.Avocado_Fish
 
 		//CustomDish
 		public override string AchievementName => "";
-		public override HashSet<Dish.IngredientUnlock> ExtraOrderUnlocks => new HashSet<Dish.IngredientUnlock>
-		{
-			new Dish.IngredientUnlock
-			{
-				MenuItem = (ItemGroup)GDOUtils.GetCustomGameDataObject<Sushi_Avocado_Fish_Plated>().GameDataObject,
-				Ingredient = (Item)GDOUtils.GetExistingGDO(ItemReferences.CondimentSoySauce),
-			}
-		};
 		public override DishType Type => DishType.Base;
 		public override List<string> StartingNameSet => new List<string> {
 			"Sushi Train",

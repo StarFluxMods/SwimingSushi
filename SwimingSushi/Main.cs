@@ -11,21 +11,19 @@ using KitchenData;
 using KitchenLib.Customs;
 using KitchenLib.References;
 using KitchenLib.Utils;
-using SwimingSushi.Customs.Sushi;
-using Kitchen;
-using HarmonyLib;
-using System.Collections.Generic;
+using SwimingSushi.Customs.Sushi.Upgrades;
 
 namespace SwimingSushi
 {
     public class Main : BaseMod
 	{
-		public Main() : base("swimingsushi", "Swiming Sushi", "StarFluxGames", "0.1.5", "1.1.3", Assembly.GetExecutingAssembly()) { }
+		public Main() : base("swimingsushi", "Swiming Sushi", "StarFluxGames", "0.1.6", "1.1.3", Assembly.GetExecutingAssembly()) { }
 
 		public static AssetBundle bundle;
 
 		public static CustomDish Sushi_Avocado_Fish_Plated_Dish;
 		public static CustomDish Sushi_Crab_Mayo_Plated_Dish;
+		public static CustomDish Sushi_Soy_Sauce;
 
 		public override void OnPostActivate(Mod mod)
 		{
@@ -56,12 +54,14 @@ namespace SwimingSushi
 
 			AddGameDataObject<SalmonProvider>();
 			AddGameDataObject<CrabProvider>();
+			Sushi_Soy_Sauce = AddGameDataObject<Sushi_Soy_Sauce>();
 
 		}
 
 		public override void OnUpdate()
 		{
 			((Dish)Sushi_Crab_Mayo_Plated_Dish.GameDataObject).BlockedBy = Sushi_Crab_Mayo_Plated_Dish.HardcodedBlockers;
+			((Dish)Sushi_Soy_Sauce.GameDataObject).BlockedBy = Sushi_Soy_Sauce.HardcodedBlockers;
 
 			Item crabRaw = (Item)GDOUtils.GetExistingGDO(ItemReferences.CrabRaw);
 			crabRaw.DedicatedProvider = (Appliance)GDOUtils.GetCustomGameDataObject<CrabProvider>().GameDataObject;

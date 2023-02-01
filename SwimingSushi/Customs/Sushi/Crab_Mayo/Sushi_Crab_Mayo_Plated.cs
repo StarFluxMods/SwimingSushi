@@ -71,14 +71,6 @@ namespace SwimingSushi.Customs.Sushi.Crab_Mayo
 
 		//CustomDish
 		public override string AchievementName => "";
-		public override HashSet<Dish.IngredientUnlock> ExtraOrderUnlocks => new HashSet<Dish.IngredientUnlock>
-		{
-			new Dish.IngredientUnlock
-			{
-				MenuItem = (ItemGroup)GDOUtils.GetCustomGameDataObject<Sushi_Crab_Mayo_Plated>().GameDataObject,
-				Ingredient = (Item)GDOUtils.GetExistingGDO(ItemReferences.CondimentSoySauce),
-			}
-		};
 		public override DishType Type => DishType.Main;
 		public override HashSet<Item> MinimumIngredients => new HashSet<Item>()
 		{
