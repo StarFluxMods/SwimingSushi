@@ -5,12 +5,12 @@ using KitchenLib.Utils;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace SwimingSushi.Customs.Sushi.Base
+namespace SwimingSushi.Customs
 {
     public class NoriSheet : CustomItemGroup
     {
         public override string UniqueNameID => "norisheet";
-        public override GameObject Prefab => Main.bundle.LoadAsset<GameObject>("NoriSheet");
+        public override GameObject Prefab => Main.bundle.LoadAsset<GameObject>("Nori_Sheet");
         public override bool AutoCollapsing => true;
         public override List<ItemGroup.ItemSet> Sets => new List<ItemGroup.ItemSet>()
         {
@@ -25,12 +25,5 @@ namespace SwimingSushi.Customs.Sushi.Base
                 }
             },
         };
-
-        public override void OnRegister(GameDataObject gameDataObject)
-        {
-            Item item = (Item)gameDataObject;
-            MaterialUtils.ApplyMaterial(item.Prefab, "SushiUnrolled/Nori", new Material[] { MaterialUtils.GetCustomMaterial("Nori") });
-            MaterialUtils.ApplyMaterial(item.Prefab, "SushiUnrolled/Rice", new Material[] { MaterialUtils.GetExistingMaterial("Rice") });
-        }
     }
 }

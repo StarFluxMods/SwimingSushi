@@ -3,16 +3,15 @@ using KitchenData;
 using KitchenLib.Customs;
 using KitchenLib.References;
 using KitchenLib.Utils;
-using SwimingSushi.Customs.Sushi.Base;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace SwimingSushi.Customs.Sushi.Crab_Mayo
+namespace SwimingSushi.Customs
 {
 	public class Sushi_Crab_Mayo_Unrolled : CustomItemGroup
 	{
 		public override string UniqueNameID => "Sushi_Crab_Mayo_Unrolled";
-		public override GameObject Prefab => Main.bundle.LoadAsset<GameObject>("Sushi Crab Mayo Unrolled");
+		public override GameObject Prefab => Main.bundle.LoadAsset<GameObject>("Crab_Mayo_Unrolled");
 		public override List<Item.ItemProcess> Processes => new List<Item.ItemProcess>
 		{
 			new Item.ItemProcess{
@@ -51,24 +50,20 @@ namespace SwimingSushi.Customs.Sushi.Crab_Mayo
 		{
 			ItemGroup item = (ItemGroup)gameDataObject;
 			ItemGroupView view = item.Prefab.GetComponent<ItemGroupView>();
-			MaterialUtils.ApplyMaterial(item.Prefab, "Model/Nori", new Material[] { MaterialUtils.GetCustomMaterial("Nori") });
-			MaterialUtils.ApplyMaterial(item.Prefab, "Model/Rice", new Material[] { MaterialUtils.GetCustomMaterial("NoriRice") });
-			MaterialUtils.ApplyMaterial(item.Prefab, "Model/Crab", new Material[] { MaterialUtils.GetExistingMaterial("Crab - Raw Shell") });
-			MaterialUtils.ApplyMaterial(item.Prefab, "Model/Mayo", new Material[] { MaterialUtils.GetExistingMaterial("Mayonnaise") });
 
 			view.ComponentGroups = new List<ItemGroupView.ComponentGroup>
 			{
 				new ItemGroupView.ComponentGroup
 				{
 					Item = (Item)GDOUtils.GetExistingGDO(ItemReferences.CrabChopped),
-					GameObject = GameObjectUtils.GetChildObject(item.Prefab, "Model/Mayonnaise"),
+					GameObject = GameObjectUtils.GetChildObject(item.Prefab, "Crab"),
 					DrawAll = true
 				},
 
 				new ItemGroupView.ComponentGroup
 				{
 					Item = (Item)GDOUtils.GetExistingGDO(ItemReferences.Mayonnaise),
-					GameObject = GameObjectUtils.GetChildObject(item.Prefab, "Model/Mayo"),
+					GameObject = GameObjectUtils.GetChildObject(item.Prefab, "Mayo"),
 					DrawAll = true
 				}
 			};

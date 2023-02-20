@@ -5,12 +5,12 @@ using KitchenLib.Utils;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace SwimingSushi.Customs.Sushi.Base
+namespace SwimingSushi.Customs
 {
     public class PlainSushi_Unrolled : CustomItemGroup
     {
         public override string UniqueNameID => "PlainSushi_Unrolled";
-        public override GameObject Prefab => Main.bundle.LoadAsset<GameObject>("PlainSushi_Unrolled");
+        public override GameObject Prefab => Main.bundle.LoadAsset<GameObject>("Plain_Sushi_Unrolled");
         public override List<ItemGroup.ItemSet> Sets => new List<ItemGroup.ItemSet>()
         {
             new ItemGroup.ItemSet()
@@ -24,11 +24,5 @@ namespace SwimingSushi.Customs.Sushi.Base
                 }
             }
         };
-        public override void OnRegister(GameDataObject gameDataObject)
-        {
-            Item item = (Item)gameDataObject;
-            MaterialUtils.ApplyMaterial(item.Prefab, "SushiUnrolled/Nori", new Material[] { MaterialUtils.GetCustomMaterial("Nori") });
-            MaterialUtils.ApplyMaterial(item.Prefab, "SushiUnrolled/Rice", new Material[] { MaterialUtils.GetCustomMaterial("NoriRice") });
-        }
     }
 }

@@ -5,12 +5,12 @@ using KitchenLib.Utils;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace SwimingSushi.Customs.Sushi.Avocado_Fish
+namespace SwimingSushi.Customs
 {
     public class Sushi_Avocado_Fish_Rolled : CustomItem
 	{
 		public override string UniqueNameID => "Sushi_Avocado_Fish_Rolled";
-		public override GameObject Prefab => Main.bundle.LoadAsset<GameObject>("Sushi Avocado Fish Rolled");
+		public override GameObject Prefab => Main.bundle.LoadAsset<GameObject>("Fish_Avocado_Rolled");
 		public override List<Item.ItemProcess> Processes => new List<Item.ItemProcess>
 		{
 			new Item.ItemProcess{
@@ -22,15 +22,5 @@ namespace SwimingSushi.Customs.Sushi.Avocado_Fish
 		};
 
 		public override string ColourBlindTag => "AF";
-		public override void OnRegister(GameDataObject gameDataObject)
-		{
-			Item item = (Item)gameDataObject;
-			MaterialUtils.ApplyMaterial(item.Prefab, "Model/Sushi_Rolled", new Material[] {
-				MaterialUtils.GetExistingMaterial("Raw Fish Spiny"),
-				MaterialUtils.GetCustomMaterial("Nori"),
-				MaterialUtils.GetExistingMaterial("Rice"),
-				MaterialUtils.GetExistingMaterial("Lettuce")
-			});
-		}
 	}
 }

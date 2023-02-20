@@ -8,8 +8,6 @@ using KitchenData;
 using KitchenLib.Customs;
 using KitchenLib.Utils;
 using KitchenLib.References;
-using SwimingSushi.Customs.Sushi.Avocado_Fish;
-using SwimingSushi.Customs.Sushi.Crab_Mayo;
 using UnityEngine;
 using System.Reflection;
 
@@ -51,7 +49,7 @@ namespace SwimingSushi.Customs.Sushi.Upgrades
 		};
 		public override Dictionary<Locale, string> Recipe => new Dictionary<Locale, string>
 		{
-			{ Locale.English, "Combine 2 Cooked Seaweed to make Nori, add some Rice, Chopped Crab, then Mayonnaise and roll for serving!" }
+			{ Locale.English, "Provide Soy Sauce to customers who request it." }
 		};
 		public override List<Unlock> HardcodedRequirements => new List<Unlock> { (Unlock)GDOUtils.GetCustomGameDataObject<Sushi_Avocado_Fish_Plated_Dish>().GameDataObject };
 

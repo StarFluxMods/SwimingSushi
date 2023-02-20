@@ -2,12 +2,13 @@
 using KitchenLib.Customs;
 using KitchenLib.References;
 using KitchenLib.Utils;
+using SwimingSushi.Customs.Providers;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace SwimingSushi.Customs
 {
-	public class Avocado : CustomItem
+    public class Avocado : CustomItem
 	{
 		public override string UniqueNameID => "Avocado";
 		public override GameObject Prefab => Main.bundle.LoadAsset<GameObject>("Avocado");
@@ -23,14 +24,5 @@ namespace SwimingSushi.Customs
 				Result = (Item)GDOUtils.GetCustomGameDataObject<ChoppedAvocado>().GameDataObject
 			}
 		};
-
-		public override void OnRegister(GameDataObject gameDataObject)
-		{
-			Item item = (Item)gameDataObject;
-			MaterialUtils.ApplyMaterial(item.Prefab, "Avocado", new Material[] {
-				MaterialUtils.GetExistingMaterial("Tree Dark"),
-				MaterialUtils.GetExistingMaterial("Baked Apple")
-			});
-		}
 	}
 }

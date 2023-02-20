@@ -3,16 +3,15 @@ using KitchenData;
 using KitchenLib.Customs;
 using KitchenLib.References;
 using KitchenLib.Utils;
-using SwimingSushi.Customs.Sushi.Base;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace SwimingSushi.Customs.Sushi.Avocado_Fish
+namespace SwimingSushi.Customs
 {
     public class Sushi_Avocado_Fish_Unrolled : CustomItemGroup
 	{
 		public override string UniqueNameID => "Sushi_Avocado_Fish_Unrolled";
-		public override GameObject Prefab => Main.bundle.LoadAsset<GameObject>("Sushi Avocado Fish Unrolled");
+		public override GameObject Prefab => Main.bundle.LoadAsset<GameObject>("Fish_Avocado_Unrolled");
 		public override List<Item.ItemProcess> Processes => new List<Item.ItemProcess>
 		{
 			new Item.ItemProcess{
@@ -51,24 +50,20 @@ namespace SwimingSushi.Customs.Sushi.Avocado_Fish
 		{
 			ItemGroup item = (ItemGroup)gameDataObject;
 			ItemGroupView view = item.Prefab.GetComponent<ItemGroupView>();
-			MaterialUtils.ApplyMaterial(item.Prefab, "Model/Nori", new Material[] { MaterialUtils.GetCustomMaterial("Nori") });
-			MaterialUtils.ApplyMaterial(item.Prefab, "Model/Rice", new Material[] { MaterialUtils.GetCustomMaterial("NoriRice") });
-			MaterialUtils.ApplyMaterial(item.Prefab, "Model/Avocado", new Material[] { MaterialUtils.GetExistingMaterial("Lettuce") });
-			MaterialUtils.ApplyMaterial(item.Prefab, "Model/Fillet", new Material[] { MaterialUtils.GetExistingMaterial("Raw Fish Spiny") });
 
 			view.ComponentGroups = new List<ItemGroupView.ComponentGroup>
 			{
 				new ItemGroupView.ComponentGroup
 				{
 					Item = (Item)GDOUtils.GetCustomGameDataObject<ChoppedAvocado>().GameDataObject,
-					GameObject = GameObjectUtils.GetChildObject(item.Prefab, "Model/Avocado"),
+					GameObject = GameObjectUtils.GetChildObject(item.Prefab, "Avocado_Placed"),
 					DrawAll = true
 				},
 
 				new ItemGroupView.ComponentGroup
 				{
 					Item = (Item)GDOUtils.GetExistingGDO(ItemReferences.FishFillet),
-					GameObject = GameObjectUtils.GetChildObject(item.Prefab, "Model/Fillet"),
+					GameObject = GameObjectUtils.GetChildObject(item.Prefab, "Fish_Fillet_Placed"),
 					DrawAll = true
 				}
 			};

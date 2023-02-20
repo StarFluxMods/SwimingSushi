@@ -4,20 +4,19 @@ using System.Linq;
 using System.Reflection;
 using UnityEngine;
 using SwimingSushi.Customs;
-using SwimingSushi.Customs.Sushi.Base;
-using SwimingSushi.Customs.Sushi.Avocado_Fish;
-using SwimingSushi.Customs.Sushi.Crab_Mayo;
 using KitchenData;
 using KitchenLib.Customs;
 using KitchenLib.References;
 using KitchenLib.Utils;
 using SwimingSushi.Customs.Sushi.Upgrades;
+using SwimingSushi.Customs.Providers;
+using SwimingSushi.Customs.Sushi.Mega_Nigiri;
 
 namespace SwimingSushi
 {
-    public class Main : BaseMod
+	public class Main : BaseMod
 	{
-		public Main() : base("swimingsushi", "Swiming Sushi", "StarFluxGames", "0.1.6", "1.1.3", Assembly.GetExecutingAssembly()) { }
+		public Main() : base("swimingsushi", "Swiming Sushi", "StarFluxGames", "0.1.7", "1.1.4", Assembly.GetExecutingAssembly()) { }
 
 		public static AssetBundle bundle;
 
@@ -56,9 +55,28 @@ namespace SwimingSushi
 			AddGameDataObject<CrabProvider>();
 			Sushi_Soy_Sauce = AddGameDataObject<Sushi_Soy_Sauce>();
 
+			AddGameDataObject<Wasabi_Provider>();
+			AddGameDataObject<Wasabi>();
+			AddGameDataObject<Wasabi_Side>();
+
+			AddGameDataObject<Nigiri>();
+			AddGameDataObject<Nigiri_Plated>();
+			AddGameDataObject<Double_Nigiri>();
+			AddGameDataObject<Double_Nigiri_Plated>();
+
+			AddGameDataObject<Nigiri_Dish>();
+			AddGameDataObject<Double_Nigiri_Dish>();
+
+			AddGameDataObject<Mega_Rice_Tier1>();
+			AddGameDataObject<Mega_Rice_Tier2>();
+			AddGameDataObject<Cooked_Mega_Rice>();
+			AddGameDataObject<Mega_Nigiri>();
+			AddGameDataObject<Mega_Nigiri_Plated>();
+			AddGameDataObject<Mega_Nigiri_Dish>();
+
 		}
 
-		public override void OnUpdate()
+		public override void OnFrameUpdate()
 		{
 			((Dish)Sushi_Crab_Mayo_Plated_Dish.GameDataObject).BlockedBy = Sushi_Crab_Mayo_Plated_Dish.HardcodedBlockers;
 			((Dish)Sushi_Soy_Sauce.GameDataObject).BlockedBy = Sushi_Soy_Sauce.HardcodedBlockers;

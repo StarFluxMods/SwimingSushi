@@ -6,12 +6,12 @@ using KitchenLib.Utils;
 using KitchenLib.References;
 using System.Reflection;
 
-namespace SwimingSushi.Customs.Sushi.Avocado_Fish
+namespace SwimingSushi.Customs
 {
 	public class Sushi_Avocado_Fish_Plated : CustomItemGroup
 	{
 		public override string UniqueNameID => "Sushi_Avocado_Fish_Plated";
-		public override GameObject Prefab => Main.bundle.LoadAsset<GameObject>("Sushi Avocado Fish Plated");
+		public override GameObject Prefab => Main.bundle.LoadAsset<GameObject>("Fish_Avocado_Plated");
 		public override bool AutoCollapsing => false;
 		public override Item DirtiesTo => (Item)GDOUtils.GetExistingGDO(ItemReferences.PlateDirty);
 		public override Item DisposesTo => (Item)GDOUtils.GetExistingGDO(ItemReferences.Plate);
@@ -34,23 +34,6 @@ namespace SwimingSushi.Customs.Sushi.Avocado_Fish
 		};
 		public override ItemValue ItemValue => ItemValue.Large;
 		public override string ColourBlindTag => "AF";
-
-		public override void OnRegister(GameDataObject gameDataObject)
-		{
-			ItemGroup item = (ItemGroup)gameDataObject;
-			MaterialUtils.ApplyMaterial(item.Prefab, "Plate", new Material[]
-			{
-				MaterialUtils.GetExistingMaterial("Plate"),
-				MaterialUtils.GetExistingMaterial("Plate - Ring")
-			});
-			MaterialUtils.ApplyMaterial(item.Prefab, "Sushi", new Material[]
-			{
-				MaterialUtils.GetExistingMaterial("Raw Fish Spiny"),
-				MaterialUtils.GetCustomMaterial("Nori"),
-				MaterialUtils.GetExistingMaterial("Rice"),
-				MaterialUtils.GetExistingMaterial("Lettuce")
-			});
-		}
 	}
 	public class Sushi_Avocado_Fish_Plated_Dish : CustomDish
 	{
@@ -94,7 +77,7 @@ namespace SwimingSushi.Customs.Sushi.Avocado_Fish
 			(Process)GDOUtils.GetExistingGDO(ProcessReferences.Chop),
 			(Process)GDOUtils.GetExistingGDO(ProcessReferences.Knead),
 		};
-		public override GameObject IconPrefab => Main.bundle.LoadAsset<GameObject>("Sushi - Icon");
+		public override GameObject IconPrefab => Main.bundle.LoadAsset<GameObject>("Sushi_Icon");
 		public override GameObject DisplayPrefab => ((Item)GDOUtils.GetCustomGameDataObject<Sushi_Avocado_Fish_Plated>().GameDataObject).Prefab;
 		public override List<Dish.MenuItem> ResultingMenuItems => new List<Dish.MenuItem>
 		{
@@ -136,7 +119,7 @@ namespace SwimingSushi.Customs.Sushi.Avocado_Fish
             dictionary.SetValue(info, dict);
             dish.Info = info;
 
-
+			/*
             MaterialUtils.ApplyMaterial(dish.IconPrefab, "Plate/Plate/Cylinder", new Material[]
             {
                 MaterialUtils.GetExistingMaterial("Plate"),
@@ -149,6 +132,7 @@ namespace SwimingSushi.Customs.Sushi.Avocado_Fish
                 MaterialUtils.GetExistingMaterial("Rice"),
                 MaterialUtils.GetExistingMaterial("Lettuce")
             });
+			*/
         }
     }
 }
