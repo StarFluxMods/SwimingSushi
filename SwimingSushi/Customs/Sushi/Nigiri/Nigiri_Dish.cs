@@ -31,12 +31,13 @@ namespace SwimingSushi.Customs
 		public override DishType Type => DishType.Main;
 		public override HashSet<Item> MinimumIngredients => new HashSet<Item>()
 		{
-			(Item)GDOUtils.GetExistingGDO(ItemReferences.Wok),
 			(Item)GDOUtils.GetExistingGDO(ItemReferences.Rice),
-			(Item)GDOUtils.GetExistingGDO(ItemReferences.FishFilletRaw)
+			(Item)GDOUtils.GetExistingGDO(ItemReferences.FishFilletRaw),
+			(Item)GDOUtils.GetExistingGDO(ItemReferences.Pot),
+			(Item)GDOUtils.GetExistingGDO(ItemReferences.Water),
 		};
 
-		
+
 		public override HashSet<Process> RequiredProcesses => new HashSet<Process>
 		{
 			(Process)GDOUtils.GetExistingGDO(ProcessReferences.Cook),
@@ -64,7 +65,7 @@ namespace SwimingSushi.Customs
 		};
 		public override Dictionary<Locale, string> Recipe => new Dictionary<Locale, string>
 		{
-			{ Locale.English, "Combine Cooked Rice, and some Fish Fillet to make your Nigiri!" }
+			{ Locale.English, "Boil Rice, combine with a Fish Fillet to make your Nigiri!" }
 		};
 
 		public override void OnRegister(GameDataObject gameDataObject)

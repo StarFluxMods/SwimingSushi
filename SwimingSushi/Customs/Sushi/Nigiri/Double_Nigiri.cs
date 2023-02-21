@@ -25,6 +25,6 @@ namespace SwimingSushi.Customs
 				IsMandatory = true
 			}
 		};
-		public override bool AutoCollapsing => true;
+		public override bool AutoCollapsing => false;
 	}
 }

@@ -2,6 +2,7 @@
 using KitchenLib.Customs;
 using KitchenLib.References;
 using KitchenLib.Utils;
+using SwimingSushi.Customs.Rice;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -20,8 +21,8 @@ namespace SwimingSushi.Customs
                 Items = new List<Item>()
                 {
                     (Item)GDOUtils.GetCustomGameDataObject<NoriSheet>().GameDataObject,
-                    (Item)GDOUtils.GetExistingGDO(ItemReferences.RiceContainerCooked)
-                }
+					(Item)GDOUtils.GetCustomGameDataObject<Rice_Cooked>().GameDataObject
+				}
             }
         };
     }

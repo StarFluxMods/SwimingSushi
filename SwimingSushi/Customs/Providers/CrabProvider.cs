@@ -31,7 +31,13 @@ namespace SwimingSushi.Customs.Providers
         public override void OnRegister(GameDataObject gameDataObject)
         {
             Appliance appliance = (Appliance)gameDataObject;
-            GameObjectUtils.GetChildObject(appliance.Prefab, "Fish_Tank/Fish Tank").GetComponent<MeshRenderer>().materials[1] = MaterialUtils.GetExistingMaterial("Door Glass");
-        }
+			MaterialUtils.ApplyMaterial(appliance.Prefab, "Fish_Tank/Fish Tank", new Material[]
+			{
+				MaterialUtils.GetExistingMaterial("AppleGreen"),
+				MaterialUtils.GetExistingMaterial("Door Glass"),
+				MaterialUtils.GetExistingMaterial("Plastic - Black"),
+				MaterialUtils.GetExistingMaterial("Paper - Menu Body"),
+			});
+		}
     }
 }

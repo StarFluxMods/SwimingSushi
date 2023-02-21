@@ -19,18 +19,26 @@ namespace SwimingSushi.Customs
 		{
 			new ItemGroup.ItemSet()
 			{
+				Max = 1,
+				Min = 1,
+				Items = new List<Item>()
+				{
+					(Item)GDOUtils.GetExistingGDO(ItemReferences.Plate)
+				},
+				IsMandatory = true
+			},
+			new ItemGroup.ItemSet()
+			{
 				Max = 2,
 				Min = 2,
 				Items = new List<Item>()
 				{
-					(Item)GDOUtils.GetCustomGameDataObject<Double_Nigiri>().GameDataObject,
-					(Item)GDOUtils.GetExistingGDO(ItemReferences.Plate)
+					(Item)GDOUtils.GetCustomGameDataObject<Nigiri>().GameDataObject,
+					(Item)GDOUtils.GetCustomGameDataObject<Nigiri>().GameDataObject,
 				},
-				OrderingOnly = false,
-				IsMandatory = true,
-				RequiresUnlock = false
+				IsMandatory = false
 			}
 		};
-		public override ItemValue ItemValue => ItemValue.Large;
+		public override ItemValue ItemValue => ItemValue.Medium;
 	}
 }

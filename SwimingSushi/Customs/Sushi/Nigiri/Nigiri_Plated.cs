@@ -11,7 +11,7 @@ namespace SwimingSushi.Customs
 	{
 		public override string UniqueNameID => "Nigiri_Plated";
 		public override GameObject Prefab => Main.bundle.LoadAsset<GameObject>("Nigiri_Plated");
-		public override bool AutoCollapsing => true;
+		public override bool AutoCollapsing => false;
 		public override Item DirtiesTo => (Item)GDOUtils.GetExistingGDO(ItemReferences.PlateDirty);
 		public override Item DisposesTo => (Item)GDOUtils.GetExistingGDO(ItemReferences.Plate);
 		public override bool CanContainSide => true;
@@ -31,6 +31,6 @@ namespace SwimingSushi.Customs
 				RequiresUnlock = false
 			}
 		};
-		public override ItemValue ItemValue => ItemValue.Large;
+		public override ItemValue ItemValue => ItemValue.Small;
 	}
 }

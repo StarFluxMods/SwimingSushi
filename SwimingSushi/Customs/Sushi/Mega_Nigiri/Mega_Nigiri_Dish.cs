@@ -33,7 +33,9 @@ namespace SwimingSushi.Customs
 		public override HashSet<Item> MinimumIngredients => new HashSet<Item>()
 		{
 			(Item)GDOUtils.GetExistingGDO(ItemReferences.Rice),
-			(Item)GDOUtils.GetExistingGDO(ItemReferences.FishFilletRaw)
+			(Item)GDOUtils.GetExistingGDO(ItemReferences.FishFilletRaw),
+			(Item)GDOUtils.GetExistingGDO(ItemReferences.Pot),
+			(Item)GDOUtils.GetExistingGDO(ItemReferences.Water),
 		};
 
 
@@ -63,7 +65,7 @@ namespace SwimingSushi.Customs
 		};
 		public override Dictionary<Locale, string> Recipe => new Dictionary<Locale, string>
 		{
-			{ Locale.English, "Combine 3 Rice, Cook, add Fish Fillet." }
+			{ Locale.English, "Boil Rice, combine 3 Rice, add Fish Fillet." }
 		};
 
 		public override void OnRegister(GameDataObject gameDataObject)

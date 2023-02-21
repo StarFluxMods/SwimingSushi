@@ -11,12 +11,13 @@ using KitchenLib.Utils;
 using SwimingSushi.Customs.Sushi.Upgrades;
 using SwimingSushi.Customs.Providers;
 using SwimingSushi.Customs.Sushi.Mega_Nigiri;
+using SwimingSushi.Customs.Rice;
 
 namespace SwimingSushi
 {
 	public class Main : BaseMod
 	{
-		public Main() : base("swimingsushi", "Swimming Sushi", "StarFluxGames", "0.1.9", "1.1.4", Assembly.GetExecutingAssembly()) { }
+		public Main() : base("swimingsushi", "Swimming Sushi", "StarFluxGames", "0.2.0", "1.1.4", Assembly.GetExecutingAssembly()) { }
 
 		public static AssetBundle bundle;
 
@@ -69,10 +70,14 @@ namespace SwimingSushi
 
 			AddGameDataObject<Mega_Rice_Tier1>();
 			AddGameDataObject<Mega_Rice_Tier2>();
-			AddGameDataObject<Cooked_Mega_Rice>();
+			//AddGameDataObject<Cooked_Mega_Rice>();
 			AddGameDataObject<Mega_Nigiri>();
 			AddGameDataObject<Mega_Nigiri_Plated>();
 			AddGameDataObject<Mega_Nigiri_Dish>();
+
+			AddGameDataObject<Rice_Pot>();
+			AddGameDataObject<Cooked_Rice_Pot>();
+			AddGameDataObject<Rice_Cooked>();
 
 		}
 

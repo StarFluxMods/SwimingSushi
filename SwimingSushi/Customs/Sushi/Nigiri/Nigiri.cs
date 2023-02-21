@@ -3,6 +3,7 @@ using KitchenData;
 using KitchenLib.Customs;
 using KitchenLib.References;
 using KitchenLib.Utils;
+using SwimingSushi.Customs.Rice;
 using UnityEngine;
 
 namespace SwimingSushi.Customs
@@ -20,7 +21,7 @@ namespace SwimingSushi.Customs
 				Min = 2,
 				Items = new List<Item>()
 				{
-					(Item)GDOUtils.GetExistingGDO(ItemReferences.RiceContainerCooked),
+					(Item)GDOUtils.GetCustomGameDataObject<Rice_Cooked>().GameDataObject,
 					(Item)GDOUtils.GetExistingGDO(ItemReferences.FishFillet),
 				},
 				IsMandatory = true

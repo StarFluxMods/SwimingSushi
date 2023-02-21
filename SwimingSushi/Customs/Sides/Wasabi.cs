@@ -13,5 +13,6 @@ namespace SwimingSushi.Customs
 
 		public override Appliance DedicatedProvider => (Appliance)GDOUtils.GetCustomGameDataObject<Wasabi_Provider>().GameDataObject;
 		public override bool IsMergeableSide => true;
+		public override ItemValue ItemValue => ItemValue.SideSmall;
 	}
 }

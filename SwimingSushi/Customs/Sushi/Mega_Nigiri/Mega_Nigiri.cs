@@ -20,7 +20,7 @@ namespace SwimingSushi.Customs
 				Min = 2,
 				Items = new List<Item>()
 				{
-					(Item)GDOUtils.GetCustomGameDataObject<Cooked_Mega_Rice>().GameDataObject,
+					(Item)GDOUtils.GetCustomGameDataObject<Mega_Rice_Tier2>().GameDataObject,
 					(Item)GDOUtils.GetExistingGDO(ItemReferences.FishFillet),
 				},
 				IsMandatory = true

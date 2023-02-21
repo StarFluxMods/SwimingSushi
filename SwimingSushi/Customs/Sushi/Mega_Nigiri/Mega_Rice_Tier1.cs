@@ -3,6 +3,7 @@ using KitchenData;
 using KitchenLib.Customs;
 using KitchenLib.References;
 using KitchenLib.Utils;
+using SwimingSushi.Customs.Rice;
 using UnityEngine;
 
 namespace SwimingSushi.Customs.Sushi.Mega_Nigiri
@@ -19,8 +20,8 @@ namespace SwimingSushi.Customs.Sushi.Mega_Nigiri
                 Min = 2,
                 Items = new List<Item>()
                 {
-                    (Item)GDOUtils.GetExistingGDO(ItemReferences.Rice),
-                    (Item)GDOUtils.GetExistingGDO(ItemReferences.Rice),
+					(Item)GDOUtils.GetCustomGameDataObject<Rice_Cooked>().GameDataObject,
+					(Item)GDOUtils.GetCustomGameDataObject<Rice_Cooked>().GameDataObject,
                 },
                 IsMandatory = true
             }
