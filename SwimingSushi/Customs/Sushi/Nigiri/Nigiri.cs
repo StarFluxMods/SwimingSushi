@@ -11,6 +11,7 @@ namespace SwimingSushi.Customs
 	{
 		public override string UniqueNameID => "Nigiri";
 		public override GameObject Prefab => Main.bundle.LoadAsset<GameObject>("Nigiri");
+		public override ItemStorage ItemStorageFlags => ItemStorage.StackableFood;
 		public override List<ItemGroup.ItemSet> Sets => new List<ItemGroup.ItemSet>()
 		{
 			new ItemGroup.ItemSet()
