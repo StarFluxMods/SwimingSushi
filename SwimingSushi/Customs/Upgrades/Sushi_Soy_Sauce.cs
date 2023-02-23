@@ -53,7 +53,7 @@ namespace SwimingSushi.Customs
 			},
 			new Dish.IngredientUnlock
 			{
-				MenuItem = (ItemGroup)GDOUtils.GetCustomGameDataObject<Onigiri_Plated>().GameDataObject,
+				MenuItem = (ItemGroup)GDOUtils.GetCustomGameDataObject<Gunkan_Maki_Plated>().GameDataObject,
 				Ingredient = (Item)GDOUtils.GetExistingGDO(ItemReferences.CondimentSoySauce)
 			}
 		};
