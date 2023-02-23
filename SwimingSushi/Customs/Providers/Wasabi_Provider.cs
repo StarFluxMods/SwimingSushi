@@ -2,14 +2,10 @@
 using KitchenLib.Customs;
 using KitchenLib.References;
 using KitchenLib.Utils;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UnityEngine;
 
-namespace SwimingSushi.Customs.Providers
+namespace SwimingSushi.Customs
 {
 	internal class Wasabi_Provider : CustomAppliance
 	{

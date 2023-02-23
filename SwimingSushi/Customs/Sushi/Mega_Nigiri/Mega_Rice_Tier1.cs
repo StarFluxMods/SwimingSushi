@@ -3,10 +3,9 @@ using KitchenData;
 using KitchenLib.Customs;
 using KitchenLib.References;
 using KitchenLib.Utils;
-using SwimingSushi.Customs.Rice;
 using UnityEngine;
 
-namespace SwimingSushi.Customs.Sushi.Mega_Nigiri
+namespace SwimingSushi.Customs
 {
     public class Mega_Rice_Tier1 : CustomItemGroup
     {
@@ -20,9 +19,9 @@ namespace SwimingSushi.Customs.Sushi.Mega_Nigiri
                 Min = 2,
                 Items = new List<Item>()
                 {
-					(Item)GDOUtils.GetCustomGameDataObject<Rice_Cooked>().GameDataObject,
-					(Item)GDOUtils.GetCustomGameDataObject<Rice_Cooked>().GameDataObject,
-                },
+					(Item)GDOUtils.GetExistingGDO(ItemReferences.Rice),
+					(Item)GDOUtils.GetExistingGDO(ItemReferences.Rice),
+				},
                 IsMandatory = true
             }
         };

@@ -2,7 +2,6 @@
 using KitchenLib.Customs;
 using KitchenLib.References;
 using KitchenLib.Utils;
-using SwimingSushi.Customs.Rice;
 using System.Collections.Generic;
 using UnityEngine;
 

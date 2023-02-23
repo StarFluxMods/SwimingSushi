@@ -3,16 +3,15 @@ using KitchenData;
 using KitchenLib.Customs;
 using KitchenLib.References;
 using KitchenLib.Utils;
-using SwimingSushi.Customs.Rice;
 using UnityEngine;
 
-namespace SwimingSushi.Customs.Sushi.Mega_Nigiri
+namespace SwimingSushi.Customs
 {
     public class Mega_Rice_Tier2 : CustomItemGroup
     {
         public override string UniqueNameID => "Mega_Rice_Tier2";
         public override GameObject Prefab => Main.bundle.LoadAsset<GameObject>("Mega_Rice_Tier2");
-		/*
+		
 		public override List<Item.ItemProcess> Processes => new List<Item.ItemProcess>
 		{
 			new Item.ItemProcess
@@ -24,7 +23,7 @@ namespace SwimingSushi.Customs.Sushi.Mega_Nigiri
 				Result = (Item)GDOUtils.GetCustomGameDataObject<Cooked_Mega_Rice>().GameDataObject
 			}
 		};
-		*/
+		
 		public override List<ItemGroup.ItemSet> Sets => new List<ItemGroup.ItemSet>()
         {
             new ItemGroup.ItemSet()
@@ -34,8 +33,8 @@ namespace SwimingSushi.Customs.Sushi.Mega_Nigiri
                 Items = new List<Item>()
                 {
                     (Item)GDOUtils.GetCustomGameDataObject<Mega_Rice_Tier1>().GameDataObject,
-					(Item)GDOUtils.GetCustomGameDataObject<Rice_Cooked>().GameDataObject,
-                },
+					(Item)GDOUtils.GetExistingGDO(ItemReferences.Rice)
+				},
                 IsMandatory = true
             }
         };

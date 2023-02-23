@@ -5,7 +5,7 @@ using KitchenLib.References;
 using KitchenLib.Utils;
 using UnityEngine;
 
-namespace SwimingSushi.Customs.Sushi.Mega_Nigiri
+namespace SwimingSushi.Customs
 {
     public class Cooked_Mega_Rice : CustomItem
     {

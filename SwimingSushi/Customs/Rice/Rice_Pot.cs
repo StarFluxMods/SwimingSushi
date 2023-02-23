@@ -1,17 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using Kitchen;
 using KitchenData;
-using KitchenLib;
 using KitchenLib.Customs;
 using KitchenLib.References;
 using KitchenLib.Utils;
 using UnityEngine;
 
-namespace SwimingSushi.Customs.Rice
+namespace SwimingSushi.Customs
 {
 	public class Rice_Pot : CustomItemGroup
 	{

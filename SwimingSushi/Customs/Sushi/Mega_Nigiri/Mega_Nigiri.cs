@@ -3,7 +3,6 @@ using KitchenData;
 using KitchenLib.Customs;
 using KitchenLib.References;
 using KitchenLib.Utils;
-using SwimingSushi.Customs.Sushi.Mega_Nigiri;
 using UnityEngine;
 
 namespace SwimingSushi.Customs
@@ -20,7 +19,7 @@ namespace SwimingSushi.Customs
 				Min = 2,
 				Items = new List<Item>()
 				{
-					(Item)GDOUtils.GetCustomGameDataObject<Mega_Rice_Tier2>().GameDataObject,
+					(Item)GDOUtils.GetCustomGameDataObject<Cooked_Mega_Rice>().GameDataObject,
 					(Item)GDOUtils.GetExistingGDO(ItemReferences.FishFillet),
 				},
 				IsMandatory = true

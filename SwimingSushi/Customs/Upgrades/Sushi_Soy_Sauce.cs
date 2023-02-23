@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Kitchen;
+﻿using System.Collections.Generic;
 using KitchenData;
 using KitchenLib.Customs;
 using KitchenLib.Utils;
@@ -11,7 +6,7 @@ using KitchenLib.References;
 using UnityEngine;
 using System.Reflection;
 
-namespace SwimingSushi.Customs.Sushi.Upgrades
+namespace SwimingSushi.Customs
 {
 	public class Sushi_Soy_Sauce : CustomDish
 	{
@@ -39,6 +34,26 @@ namespace SwimingSushi.Customs.Sushi.Upgrades
 			new Dish.IngredientUnlock
 			{
 				MenuItem = (ItemGroup)GDOUtils.GetCustomGameDataObject<Sushi_Crab_Mayo_Plated>().GameDataObject,
+				Ingredient = (Item)GDOUtils.GetExistingGDO(ItemReferences.CondimentSoySauce)
+			},
+			new Dish.IngredientUnlock
+			{
+				MenuItem = (ItemGroup)GDOUtils.GetCustomGameDataObject<Nigiri_Plated>().GameDataObject,
+				Ingredient = (Item)GDOUtils.GetExistingGDO(ItemReferences.CondimentSoySauce)
+			},
+			new Dish.IngredientUnlock
+			{
+				MenuItem = (ItemGroup)GDOUtils.GetCustomGameDataObject<Double_Nigiri_Plated>().GameDataObject,
+				Ingredient = (Item)GDOUtils.GetExistingGDO(ItemReferences.CondimentSoySauce)
+			},
+			new Dish.IngredientUnlock
+			{
+				MenuItem = (ItemGroup)GDOUtils.GetCustomGameDataObject<Mega_Nigiri_Plated>().GameDataObject,
+				Ingredient = (Item)GDOUtils.GetExistingGDO(ItemReferences.CondimentSoySauce)
+			},
+			new Dish.IngredientUnlock
+			{
+				MenuItem = (ItemGroup)GDOUtils.GetCustomGameDataObject<Onigiri_Plated>().GameDataObject,
 				Ingredient = (Item)GDOUtils.GetExistingGDO(ItemReferences.CondimentSoySauce)
 			}
 		};

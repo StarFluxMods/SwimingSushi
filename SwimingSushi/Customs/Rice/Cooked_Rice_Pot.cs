@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Reflection;
 using UnityEngine;
 
-namespace SwimingSushi.Customs.Rice
+namespace SwimingSushi.Customs
 {
 	public class Cooked_Rice_Pot : CustomItem
 	{

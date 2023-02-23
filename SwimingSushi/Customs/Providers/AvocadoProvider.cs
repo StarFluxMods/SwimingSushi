@@ -5,7 +5,7 @@ using KitchenLib.Utils;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace SwimingSushi.Customs.Providers
+namespace SwimingSushi.Customs
 {
     public class AvocadoProvider : CustomAppliance
     {

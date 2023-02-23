@@ -1,16 +1,16 @@
-﻿using System.Collections.Generic;
-using KitchenData;
+﻿using KitchenData;
 using KitchenLib.Customs;
 using KitchenLib.References;
 using KitchenLib.Utils;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace SwimingSushi.Customs
 {
-	public class Nigiri : CustomItemGroup
+	public class Onigiri : CustomItemGroup
 	{
-		public override string UniqueNameID => "Nigiri";
-		public override GameObject Prefab => Main.bundle.LoadAsset<GameObject>("Nigiri");
+		public override string UniqueNameID => "Onigiri";
+		public override GameObject Prefab => Main.bundle.LoadAsset<GameObject>("Onigiri");
 		public override ItemStorage ItemStorageFlags => ItemStorage.StackableFood;
 		public override List<ItemGroup.ItemSet> Sets => new List<ItemGroup.ItemSet>()
 		{
@@ -20,8 +20,10 @@ namespace SwimingSushi.Customs
 				Min = 2,
 				Items = new List<Item>()
 				{
-					(Item)GDOUtils.GetCustomGameDataObject<Rice_Cooked>().GameDataObject,
-					(Item)GDOUtils.GetExistingGDO(ItemReferences.FishFillet),
+					(Item)GDOUtils.GetCustomGameDataObject<Rice_Ball>().GameDataObject,
+					(Item)GDOUtils.GetExistingGDO(ItemReferences.SeaweedCooked),
+					
+					
 				},
 				IsMandatory = true
 			}

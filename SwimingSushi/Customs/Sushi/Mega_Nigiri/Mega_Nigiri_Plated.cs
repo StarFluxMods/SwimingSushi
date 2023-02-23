@@ -3,7 +3,6 @@ using KitchenData;
 using KitchenLib.Customs;
 using KitchenLib.References;
 using KitchenLib.Utils;
-using SwimingSushi.Customs.Sushi.Mega_Nigiri;
 using UnityEngine;
 
 namespace SwimingSushi.Customs
