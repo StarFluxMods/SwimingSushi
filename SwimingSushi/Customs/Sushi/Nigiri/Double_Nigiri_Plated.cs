@@ -36,7 +36,7 @@ namespace SwimingSushi.Customs
 					(Item)GDOUtils.GetCustomGameDataObject<Nigiri>().GameDataObject,
 					(Item)GDOUtils.GetCustomGameDataObject<Nigiri>().GameDataObject,
 				},
-				IsMandatory = false
+				IsMandatory = true
 			}
 		};
 		public override ItemValue ItemValue => ItemValue.Medium;

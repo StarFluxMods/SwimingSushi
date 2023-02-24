@@ -55,6 +55,11 @@ namespace SwimingSushi.Customs
 			{
 				MenuItem = (ItemGroup)GDOUtils.GetCustomGameDataObject<Gunkan_Maki_Plated>().GameDataObject,
 				Ingredient = (Item)GDOUtils.GetExistingGDO(ItemReferences.CondimentSoySauce)
+			},
+			new Dish.IngredientUnlock
+			{
+				MenuItem = (ItemGroup)GDOUtils.GetCustomGameDataObject<Onigiri_Plated>().GameDataObject,
+				Ingredient = (Item)GDOUtils.GetExistingGDO(ItemReferences.CondimentSoySauce)
 			}
 		};
 		public override List<Unlock> HardcodedBlockers => new List<Unlock> { };

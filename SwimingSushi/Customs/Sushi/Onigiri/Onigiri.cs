@@ -22,12 +22,10 @@ namespace SwimingSushi.Customs
 				{
 					(Item)GDOUtils.GetCustomGameDataObject<Rice_Ball>().GameDataObject,
 					(Item)GDOUtils.GetExistingGDO(ItemReferences.SeaweedCooked),
-					
-					
 				},
 				IsMandatory = true
 			}
 		};
-		public override bool AutoCollapsing => true;
+		public override bool AutoCollapsing => false;
 	}
 }

@@ -21,12 +21,37 @@ namespace SwimingSushi.Customs
 				Min = 2,
 				Items = new List<Item>()
 				{
-					(Item)GDOUtils.GetCustomGameDataObject<Roe>().GameDataObject,
-					(Item)GDOUtils.GetCustomGameDataObject<Gunkan_Maki_Base>().GameDataObject,
-					(Item)GDOUtils.GetExistingGDO(ItemReferences.SeaweedCooked),
+					(Item)GDOUtils.GetCustomGameDataObject<Rice_Cooked>().GameDataObject,
+					(Item)GDOUtils.GetExistingGDO(ItemReferences.SeaweedCooked)
 				},
 				IsMandatory = true
+			},
+			new ItemGroup.ItemSet()
+			{
+				Max = 1,
+				Min = 1,
+				Items = new List<Item>()
+				{
+					(Item)GDOUtils.GetCustomGameDataObject<Roe>().GameDataObject,
+				},
+				IsMandatory = false
 			}
 		};
+
+		public override void OnRegister(GameDataObject gameDataObject)
+		{
+			ItemGroup item = (ItemGroup)gameDataObject;
+			ItemGroupView view = item.Prefab.GetComponent<ItemGroupView>();
+
+			view.ComponentGroups = new List<ItemGroupView.ComponentGroup>
+			{
+				new ItemGroupView.ComponentGroup
+				{
+					Item = (Item)GDOUtils.GetCustomGameDataObject<Roe>().GameDataObject,
+					GameObject = GameObjectUtils.GetChildObject(item.Prefab, "Gunkan_Maki/Roe"),
+					DrawAll = true
+				}
+			};
+		}
 	}
 }

@@ -13,7 +13,7 @@ namespace SwimingSushi
 {
 	public class Main : BaseMod
 	{
-		public Main() : base("swimingsushi", "Swimming Sushi", "StarFluxGames", "0.2.1", "1.1.4", Assembly.GetExecutingAssembly()) { }
+		public Main() : base("swimingsushi", "Swimming Sushi", "StarFluxGames", "0.2.2", "1.1.4", Assembly.GetExecutingAssembly()) { }
 
 		public static AssetBundle bundle;
 
@@ -77,7 +77,7 @@ namespace SwimingSushi
 
 			AddGameDataObject<Roe_Provider>();
 			AddGameDataObject<Roe>();
-			AddGameDataObject<Gunkan_Maki_Base>();
+			//AddGameDataObject<Gunkan_Maki_Base>();
 			AddGameDataObject<Gunkan_Maki>();
 			AddGameDataObject<Gunkan_Maki_Plated>();
 			AddGameDataObject<Gunkan_Maki_Dish>();

@@ -21,7 +21,8 @@ namespace SwimingSushi.Customs
                 {
                     (Item)GDOUtils.GetCustomGameDataObject<NoriSheet>().GameDataObject,
 					(Item)GDOUtils.GetCustomGameDataObject<Rice_Cooked>().GameDataObject
-				}
+				},
+				IsMandatory = true
             }
         };
     }
