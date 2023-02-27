@@ -63,7 +63,7 @@ namespace SwimingSushi.Customs
 		};
 		public override Dictionary<Locale, string> Recipe => new Dictionary<Locale, string>
 		{
-			{ Locale.English, "Boil Rice, combine 3 Rice, add Fish Fillet." }
+			{ Locale.English, "combine 3 Raw Rice, Cook, add Fish Fillet." }
 		};
 
 		public override void OnRegister(GameDataObject gameDataObject)

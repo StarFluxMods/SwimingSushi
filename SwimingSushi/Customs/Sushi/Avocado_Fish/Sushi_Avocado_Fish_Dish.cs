@@ -76,7 +76,7 @@ namespace SwimingSushi.Customs
 		public override bool DestroyAfterModUninstall => false;
         public override Dictionary<Locale, string> Recipe => new Dictionary<Locale, string>
         {
-            { Locale.English, "Combine 2 Cooked Seaweed to make Nori, Boil some Rice, Chopped Avocado, then Fish Fillet and roll for serving!" }
+            { Locale.English, "Combine 2 Cooked Seaweed to make Nori, Boil some Rice, Chopped Avocado, then Raw Fish Fillet and roll for serving!" }
         };
 
         public override void OnRegister(GameDataObject gameDataObject)

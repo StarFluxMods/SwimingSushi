@@ -13,6 +13,7 @@ namespace SwimingSushi.Customs
 		public override string UniqueNameID => "Rice_Pot";
 		public override GameObject Prefab => Main.bundle.LoadAsset<GameObject>("Rice_Pot");
 		public override bool AutoCollapsing => false;
+		public override Item DisposesTo => (Item)GDOUtils.GetExistingGDO(ItemReferences.Pot);
 		public override List<Item.ItemProcess> Processes => new List<Item.ItemProcess>
 		{
 			new Item.ItemProcess
