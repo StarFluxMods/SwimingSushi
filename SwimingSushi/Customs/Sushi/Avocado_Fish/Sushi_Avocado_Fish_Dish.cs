@@ -42,8 +42,8 @@ namespace SwimingSushi.Customs
 			(Item)GDOUtils.GetExistingGDO(ItemReferences.Pot),
 			(Item)GDOUtils.GetExistingGDO(ItemReferences.Water),
 			(Item)GDOUtils.GetExistingGDO(ItemReferences.Rice),
-			(Item)GDOUtils.GetExistingGDO(ItemReferences.FishFilletRaw),
 			(Item)GDOUtils.GetCustomGameDataObject<Avocado>().GameDataObject,
+			(Item)GDOUtils.GetCustomGameDataObject<Salmon>().GameDataObject,
 		};
 		public override HashSet<Process> RequiredProcesses => new HashSet<Process>
 		{

@@ -25,7 +25,7 @@ namespace SwimingSushi.Customs
 		};
 		public override List<IApplianceProperty> Properties => new List<IApplianceProperty>
         {
-            KitchenPropertiesUtils.GetUnlimitedCItemProvider(ItemReferences.FishFilletRaw)
+            KitchenPropertiesUtils.GetUnlimitedCItemProvider(GDOUtils.GetCustomGameDataObject<Salmon>().ID)
         };
 
         public override void OnRegister(GameDataObject gameDataObject)

@@ -40,7 +40,7 @@ namespace SwimingSushi.Customs
 				Items = new List<Item>()
 				{
 					(Item)GDOUtils.GetCustomGameDataObject<ChoppedAvocado>().GameDataObject,
-					(Item)GDOUtils.GetExistingGDO(ItemReferences.FishFillet)
+					(Item)GDOUtils.GetCustomGameDataObject<Salmon_Sliced>().GameDataObject
 				}
 			}
 		};
@@ -62,7 +62,7 @@ namespace SwimingSushi.Customs
 
 				new ItemGroupView.ComponentGroup
 				{
-					Item = (Item)GDOUtils.GetExistingGDO(ItemReferences.FishFillet),
+					Item = (Item)GDOUtils.GetCustomGameDataObject<Salmon_Sliced>().GameDataObject,
 					GameObject = GameObjectUtils.GetChildObject(item.Prefab, "Fish_Fillet_Placed"),
 					DrawAll = true
 				}

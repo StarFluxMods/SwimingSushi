@@ -16,7 +16,7 @@ namespace SwimingSushi
 {
 	public class Main : BaseMod
 	{
-		public Main() : base("swimingsushi", "Swimming Sushi", "StarFluxGames", "0.2.2", "1.1.4", Assembly.GetExecutingAssembly()) { }
+		public Main() : base("swimingsushi", "Swimming Sushi", "StarFluxGames", "0.2.3", ">=1.1.4", Assembly.GetExecutingAssembly()) { }
 
 		public static AssetBundle bundle;
 
@@ -85,7 +85,10 @@ namespace SwimingSushi
 			AddGameDataObject<Gunkan_Maki_Plated>();
 			AddGameDataObject<Gunkan_Maki_Dish>();
 
-			AddGameDataObject<Sushi_Bandana>();
+			//AddGameDataObject<Sushi_Bandana>();
+
+			AddGameDataObject<Salmon>();
+			AddGameDataObject<Salmon_Sliced>();
 		}
 
 		public static Texture2D GetApplianceSnapshot(GameObject prefab)
@@ -122,9 +125,6 @@ namespace SwimingSushi
 		{
 			Item crabRaw = (Item)GDOUtils.GetExistingGDO(ItemReferences.CrabRaw);
 			crabRaw.DedicatedProvider = (Appliance)GDOUtils.GetCustomGameDataObject<CrabProvider>().GameDataObject;
-
-			Item salmonRaw = (Item)GDOUtils.GetExistingGDO(ItemReferences.FishFilletRaw);
-			salmonRaw.DedicatedProvider = (Appliance)GDOUtils.GetCustomGameDataObject<SalmonProvider>().GameDataObject;
 		}
 	}
 }
