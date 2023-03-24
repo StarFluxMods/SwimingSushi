@@ -37,14 +37,12 @@ namespace SwimingSushi
 			AddGameDataObject<Sushi_Avocado_Fish_Split>();
 			AddGameDataObject<Sushi_Avocado_Fish_Plated>();AddGameDataObject<Sushi_Avocado_Fish_Plated_Dish>();
 
-			
 			AddGameDataObject<Sushi_Crab_Mayo_Unrolled>();
 			AddGameDataObject<Sushi_Crab_Mayo_Rolled>();
 			AddGameDataObject<Sushi_Crab_Mayo_Cut>();
 			AddGameDataObject<Sushi_Crab_Mayo_Split>();
 			AddGameDataObject<Sushi_Crab_Mayo_Plated>();
 			AddGameDataObject<Sushi_Crab_Mayo_Plated_Dish>();
-			
 
 			AddGameDataObject<SalmonProvider>();
 			AddGameDataObject<CrabProvider>();
@@ -112,6 +110,7 @@ namespace SwimingSushi
 
 		public override void OnInitialise()
 		{
+			/*
 			foreach (Decor decor in GameData.Main.Get<Decor>())
 			{
 				if (decor.Type == LayoutMaterialType.Wallpaper)
@@ -119,6 +118,7 @@ namespace SwimingSushi
 					decor.Material.SetTexture("_Overlay", bundle.LoadAsset<Texture>("Sushi_Wallpaper"));
 				}
 			}
+			*/
 		}
 
 		public override void OnFrameUpdate()

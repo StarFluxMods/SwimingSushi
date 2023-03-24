@@ -21,7 +21,7 @@ namespace SwimingSushi.Customs
 				Items = new List<Item>()
 				{
 					(Item)GDOUtils.GetCustomGameDataObject<Rice_Cooked>().GameDataObject,
-					(Item)GDOUtils.GetExistingGDO(ItemReferences.FishFillet),
+					(Item)GDOUtils.GetCustomGameDataObject<Salmon_Sliced>().GameDataObject,
 				},
 				IsMandatory = true
 			}
