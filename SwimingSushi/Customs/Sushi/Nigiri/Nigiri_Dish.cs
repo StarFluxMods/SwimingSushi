@@ -31,7 +31,7 @@ namespace SwimingSushi.Customs
 		public override HashSet<Item> MinimumIngredients => new HashSet<Item>()
 		{
 			(Item)GDOUtils.GetExistingGDO(ItemReferences.Rice),
-			(Item)GDOUtils.GetExistingGDO(ItemReferences.FishFilletRaw),
+			(Item)GDOUtils.GetCustomGameDataObject<Salmon>().GameDataObject,
 			(Item)GDOUtils.GetExistingGDO(ItemReferences.Pot),
 			(Item)GDOUtils.GetExistingGDO(ItemReferences.Water),
 		};
