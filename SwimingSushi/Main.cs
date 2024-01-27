@@ -35,7 +35,8 @@ namespace SwimingSushi
 			AddGameDataObject<Sushi_Avocado_Fish_Rolled>();
 			AddGameDataObject<Sushi_Avocado_Fish_Cut>();
 			AddGameDataObject<Sushi_Avocado_Fish_Split>();
-			AddGameDataObject<Sushi_Avocado_Fish_Plated>();AddGameDataObject<Sushi_Avocado_Fish_Plated_Dish>();
+			AddGameDataObject<Sushi_Avocado_Fish_Plated>();
+			AddGameDataObject<Sushi_Avocado_Fish_Plated_Dish>();
 
 			AddGameDataObject<Sushi_Crab_Mayo_Unrolled>();
 			AddGameDataObject<Sushi_Crab_Mayo_Rolled>();
